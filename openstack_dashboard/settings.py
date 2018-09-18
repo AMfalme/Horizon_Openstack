@@ -316,10 +316,6 @@ DEFAULT_THEME_PATH = None
 # 'key', 'label', 'path'
 AVAILABLE_THEMES = [
     (
-        'default',
-        pgettext_lazy('Default style theme', 'Default'),
-        'themes/default'
-    ), (
         'material',
         pgettext_lazy("Google's Material Design style theme", "Material"),
         'themes/material'
@@ -327,7 +323,7 @@ AVAILABLE_THEMES = [
 ]
 
 # The default theme if no cookie is present
-DEFAULT_THEME = 'default'
+DEFAULT_THEME = 'material'
 
 # Theme Static Directory
 THEME_COLLECTION_DIR = 'themes'
