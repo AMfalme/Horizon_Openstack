@@ -1,8 +1,16 @@
 $(function(){
-			
+	
+			$('.identity-forms').click(
+					function(e){
+						e.stopPropagation();
+					}
+					);
 			$('#login').click( function(e){
+
+				e.stopPropagation();
 				e.preventDefault();
 				 console.log( $( this ).text() );
+				 $('.identity-forms').addClass('identity-active');
 				$('#login').removeClass('active');
 				$(this).addClass('active');
 				$('.transform').addClass("login-active");
@@ -10,7 +18,9 @@ $(function(){
 				
 			});
 			$('#signup').click( function(e){
+				e.stopPropagation();
 				e.preventDefault();
+ 				$('.identity-forms').addClass('identity-active');
 				 console.log( $( this ).text() );
 				$('#signup').removeClass('active');
 				$(this).addClass('active');
@@ -19,9 +29,16 @@ $(function(){
 				
 			});
 			$('.menu-hover').click(function(e){
-					e.preventDefault();
-					$('.dropdown').toggleClass('block');
+					e.stopPropagation();
+					$('#dropdown').toggle();
 				});
+			$("body").click(function(e) {
+            
+               $('#dropdown').hide();
+               $('.identity-forms').removeClass('identity-active');
+            });
+           
+
 		});
 		$(document).ready(function(){
 				$(".owl-carousel").owlCarousel({

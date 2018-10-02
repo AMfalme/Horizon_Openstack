@@ -3,13 +3,32 @@
 	#D12D68
 	#778A91
 */
+@font-face {
+    font-family: circular-pro-medium;
+     font-display: auto;
+    src: url("../Fonts/Circular Pro/CircularStd-Medium.otf") format("opentype");
+}
 
+@font-face {
+    font-family: circular-pro-Bold;
+     font-display: auto;
+    src: url("../Fonts/Circular Pro/CircularStd-Bold.otf") format("opentype");
+}
+@font-face {
+    font-family: proxima-nova-black;
+     font-display: auto;
+    src: url("../Fonts/Proxima Nova/Mark Simonson - Proxima Nova Regular.otf") format("opentype");
+}
+html{
+	font-family: 'circular-pro-medium' !important;
+}
 body{
 	display: block;
 	margin: 0;
 	padding: 0;
 	color: #85969c;
 	background-color:#F2F3F2;
+	font-family: 'circular-pro-medium' !important;
 
 }
 * {
@@ -45,32 +64,52 @@ nav.navigation{
     overflow: hidden;
 }
 nav.navigation ul li a{
-	color: #85969c;
+	color: #3c5158;
+    font-family: "circular-pro-Bold";
 	}
 nav.navigation ul li a:hover, nav.navigation ul li a.active{
 	text-decoration: none;
 	color: #000;
 	}
-	.dropdown{
+	#dropdown{
 	display: none;
 		position: absolute !important;
    	z-index: 3;
     border-radius: 2px;
-    box-shadow: 0px 2px 1px 0px rgb(41, 107, 181);
+    box-shadow: 0px 2px 1px 0px rgb(132, 149, 155);
 }
-
+.identity-active{
+	display: block !important;
+}
+.identity-forms{
+	
+	padding: 10px;
+	
+	margin: 5px;
+    position: absolute;
+  
+    opacity: 15;
+    z-index: 10;
+    display: none;
+        margin-left: 60px;
+}
+.identity-forms .signup:before {
+    left: 50px;
+}
+.identity-forms .login:before {
+    right: -245px;
+}
 .menu-hover:after{
 	content: " ";
     width: 0;
     border-style: solid;
     border-width: 5px;
-    border-color: #778A91 transparent transparent;
+    border-color: #3c5158 transparent transparent;
     
     float: right;
     margin: 8px;
     cursor: pointer;
-}
-.dropdown a{
+}#dropdown a{
 	display: block;
     padding: 10px;
     background: #fff;
@@ -90,19 +129,25 @@ nav.navigation ul li a:hover, nav.navigation ul li a.active{
     color: #000;
     text-align: center;
     border-radius: 4px;
+
   
+}
+.landing-section h2{
+	font-size: 38px;
+	color: #580b77;
 }
 .block{
 	display: block;
 }
-.Title{
-	color: #778a91;
+.Title{color: #778a91;
     position: absolute;
-    margin: -15px auto 0 45px;
+    margin: -15px auto 0 30px;
     display: block;
+    width: 150px;
+
 }
 .landing-section .left-side button{
-	background-color: #296BB5;
+	background-color: #778A91;
 
 color: #ffffff;
 
@@ -117,10 +162,10 @@ display: block;
 margin: 0 auto;
 }
 .landing-section .left-side{
-	margin: 15px auto;
+	margin: -60px auto;
 }
 .menu-border{
-	box-shadow: -9px -20px 18px 20px #6FCBD6;
+	box-shadow: -7px -12px 12px 20px #778a91;
 }
 
 
@@ -135,7 +180,7 @@ margin: 0 auto;
 	color: #000;
 }
 .form-triggers li{
-	margin: 22px 65px !important;
+	margin: 22px 60px !important;
 }
 .form-triggers li.active{
  color: #000;
@@ -146,8 +191,9 @@ text-decoration: underline;
 
 color: #000;
 }
-.form-triggers li.active a{
-		color: #296BB5;
+.form-triggers li.active a, .form-triggers li.active a:hover{
+		color: #542e63;
+		 
 }
 .code-sample{
 	
@@ -224,7 +270,7 @@ color: #000;
 }
 .product i{
 	display: block;text-align: center;
-	color:  #296BB5;
+	color:  #5f3b5e;
 	
     font-size: 35px;
 }
@@ -238,7 +284,7 @@ color: #000;
     margin-top: -50px !important;
 }
 .right-nav{
-	width: 400px;
+	
 
 }
 .right{
@@ -264,7 +310,7 @@ color: #000;
 	color: #000000;
 }
 .wow{
-	visibility: none;
+	visibility: hidden;
 }
 .info div{
 	    margin: 0 auto;
@@ -282,7 +328,8 @@ color: #000;
 .info .Scalable, .info .cloud{
 	animation: fadeInRight 1.25s cubic-bezier(0.4, 0, 0.1, 1) 0.5s 1 forwards;
 	 font-size: 50px;
-	 color: #922785;	
+	 color: #922785;
+	 visibility: visible;	
 }
 
 .circle {
@@ -298,7 +345,8 @@ color: #000;
 .limit-info{
 	margin: 100px auto;
 	animation-delay: 12s;
-	-webkit-animation:  5s infinite linear;
+	-webkit-animation:  25s infinite linear;
+
 }
 
 .pitch{
@@ -313,18 +361,21 @@ color: #000;
 }
 .border-signup{
 	transition: .1s;
-left: 270px !important;
+left: 260px !important;
 }
 .shade{
 	background-color: #d7ded7;
 	
 }
+
 .flexible{
-	background-image: url("../images/web icons/webicon-09.png"); 
+	background-image: url("../img/images/web icons/webicon-09.png"); 
 	background-size: contain;
 	background-repeat: no-repeat;
 	width: 100px;
     height: 100px;
+    visibility: visible;
+
 	
 }
 .map img{
@@ -361,14 +412,14 @@ button.subscribe{
     width: 100%;
 }
 .cloud{
-	background-image: url("../images/web icons/webicon-08.png");
+	background-image: url("../img/images/web icons/webicon-08.png");
 	background-size: contain;
 	background-repeat: no-repeat;
 	width: 100px;
 	height: 100px;
 }
 .dot{
-	background-image: url(../images/marker.png);
+	background-image: url(../img/images/marker.png);
     width: 25px;
     height: 25px;
     z-index: 33;
@@ -399,29 +450,41 @@ button.subscribe{
     margin: 0 auto;
 }*/
 .Scalable{
-	background-image: url("../images/web icons/web icon-03.png");
+	background-image: url("../img/images/web icons/web icon-03.png");
 	background-size: contain;
 	background-repeat: no-repeat;
 	width: 100px;
 	height: 100px;
+	visibility: visible;
+	animation-name: rotateA;
 }
 .extensible{
-	background-image: url("../images/web icons/web icon-05.png");
+	background-image: url("../img/images/web icons/web icon-05.png");
 	background-size: contain;
 	background-repeat: no-repeat;
 	width: 100px;
 	height: 100px;
+	visibility: visible;
 }
 .login, .signup{
 	width: 400px;
     margin: 0 auto;
-    border: 1px solid #778A91;
+    border: 1px solid #542e63;
     padding: 0 30px;
     border-radius: 2px;
-    background: #778A91;
+    background: #542e63;
     backface-visibility: hidden;
-    
+    height: 400px;
+    visibility: visible;
+
+ 
 	
+}
+.login p, .signup p{
+	color: #fff;
+}
+.login a, .signup a{
+	color: grey;
 }
 .btn:hover{
 	color: #fff;
@@ -431,26 +494,30 @@ content: " ";
     width: 0;
     border-style: solid;
     border-width: 10px;
-    border-color: transparent transparent #778A91 transparent;
+    border-color: transparent transparent #542e63 transparent;
     position: relative;
-    top: -28px;
+    top: -26px;
     right: 0;
 }
 .login:before{
-	 right: -100px;
+	 right: -80px;
 }
 .signup:before{
 	
-    left: -100px;
+    left: -115px;
     
 }
 .border-active{
-	border-bottom:1px solid #296BB5;
+	border-bottom:1px solid #542e63;
     bottom: -63px;
     position: relative;
     width: 60px;
     left: 70px;
     transition: 1s;
+    display: none;
+}
+.identity-active .border-active{
+	display: block;
 }
 .signup{
 	display: block;
@@ -478,14 +545,18 @@ content: " ";
 	height: 45px;
 }
 .login input.submit, .signup input.submit{
-	background-color: #fff;
+	background-color: #778A91;
     border-color: #84969c;
-    width: 200px;
+    width: 100%;
     margin: 20px auto;
     display: block;
-    color: #000;
+    color: #fff;
 
 
+}
+.identity-forms {}
+.login form{
+	margin-top: 30px;
 }
 .pricing{
 	width: 80%;
@@ -612,21 +683,79 @@ width: 85px !important;
 
 				-webkit-transform: rotate(0deg);
 		}
-		25%{
-				transition-delay: 10s;
+		20%{
+			
 				-webkit-transform: rotate(90deg);
+		}
+		30%{
+			
+				-webkit-transform: rotate(90deg);
+		}
+		40%{
+				-webkit-transform: rotate(180deg);
 		}
 		50%{
 				-webkit-transform: rotate(180deg);
 		}
-		75%{
+		60%{
 			-webkit-transform: rotate(270deg);
+		}
+		70%{
+			-webkit-transform: rotate(270deg);
+		}
+
+		80%{
+			-webkit-transform: rotate(360deg);
+		}
+
+		90%{
+			-webkit-transform: rotate(360deg);
 		}
 
 		100%{
 			-webkit-transform: rotate(360deg);
 		}
 }
+@-webkit-keyframes rotateA {
+		0% {
+
+				-webkit-transform: rotate(0deg);
+		}
+		20%{
+			
+				-webkit-transform: rotate(90deg);
+		}
+		30%{
+			
+				-webkit-transform: rotate(90deg);
+		}
+		40%{
+				-webkit-transform: rotate(180deg);
+		}
+		50%{
+				-webkit-transform: rotate(180deg);
+		}
+		60%{
+			-webkit-transform: rotate(270deg);
+		}
+		70%{
+			-webkit-transform: rotate(270deg);
+		}
+
+		80%{
+			-webkit-transform: rotate(360deg);
+		}
+
+		90%{
+			-webkit-transform: rotate(360deg);
+		}
+
+		100%{
+			-webkit-transform: rotate(360deg);
+		}
+}
+
+
 .globe{
 	/*-webkit-animation: rotation 5s infinite linear;*/
 	width: 70px;
