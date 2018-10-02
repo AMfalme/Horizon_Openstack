@@ -37,7 +37,7 @@ WEBROOT = '/'
 # with the list of host/domain names that the application can serve.
 # For more information see:
 # https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = ['localhost', 'duara.io']
+ALLOWED_HOSTS = ['localhost', 'duara.io', 'ddash.duara.io.10.0.0.2.xip.io']
 
 # Set SSL proxy settings:
 # Pass this header from the proxy after terminating the SSL,
