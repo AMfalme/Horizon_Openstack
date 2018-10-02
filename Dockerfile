@@ -10,24 +10,14 @@ RUN apt-get update && apt-get install -y \
             libpcre3 libpcre3-dev 
 
 
-# pip dependencies.
-# NB: Copying requirements and setup files for better build caching.
+COPY . /opt/ddash
 WORKDIR /opt/ddash
-COPY requirements.txt /opt/ddash/requirements.txt
-COPY setup.py /opt/ddash/setup.py
-COPY openstack_dashboard/hooks.py /opt/ddash/openstack_dashboard/hooks.py
-COPY horizon* /opt/ddash/
-COPY README.rst /opt/ddash/README.rst
-COPY setup.cfg /opt/ddash/setup.cfg
 
+
+# pip dependencies.
 RUN pip3  install --upgrade pip
-RUN pip install --upgrade distribute
 RUN pip install -c http://git.openstack.org/cgit/openstack/requirements/plain/upper-constraints.txt?h=stable/queens .
 RUN pip install uwsgi
-
-
-# Now copy everything else
-COPY . /opt/ddash
 
 
 # Set up django
