@@ -12,7 +12,7 @@ pipeline {
     stage('Build Image') {
       steps {
         script {
-          docker.build(DDASH_IMAGE)
+          docker.build(DDASH_IMAGE, "--build-arg BUILD=prod .")
         }
       }
     }
