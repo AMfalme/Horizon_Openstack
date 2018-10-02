@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: duara.io
+  namespace: "${NAMESPACE}"
+spec:
+  rules:
+  - host: "${INGRESS}" 
+    http:
+      paths:
+      - backend:
+          serviceName: ddash 
+          servicePort: 80
+        path: /

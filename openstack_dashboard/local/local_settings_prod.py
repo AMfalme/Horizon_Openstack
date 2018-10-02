@@ -13,7 +13,7 @@ DEBUG = False
 # This setting controls whether or not compression is enabled. Disabling
 # compression makes Horizon considerably slower, but makes it much easier
 # to debug JS and CSS changes
-#COMPRESS_ENABLED = not DEBUG
+#COMPRESS_ENABLED = True
 
 # This setting controls whether compression happens on the fly, or offline
 # with `python manage.py compress`
@@ -37,7 +37,7 @@ WEBROOT = '/'
 # with the list of host/domain names that the application can serve.
 # For more information see:
 # https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
-#ALLOWED_HOSTS = ['horizon.example.com', ]
+ALLOWED_HOSTS = ['localhost', 'duara.io']
 
 # Set SSL proxy settings:
 # Pass this header from the proxy after terminating the SSL,
@@ -74,7 +74,7 @@ WEBROOT = '/'
 # Set this to True if running on a multi-domain model. When this is enabled, it
 # will require the user to enter the Domain name in addition to the username
 # for login.
-#OPENSTACK_KEYSTONE_MULTIDOMAIN_SUPPORT = False
+OPENSTACK_KEYSTONE_MULTIDOMAIN_SUPPORT = False
 
 # Set this to True if you want available domains displayed as a dropdown menu
 # on the login screen. It is strongly advised NOT to enable this for public
