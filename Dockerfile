@@ -21,6 +21,7 @@ COPY README.rst /opt/ddash/README.rst
 COPY setup.cfg /opt/ddash/setup.cfg
 
 RUN pip3  install --upgrade pip
+RUN pip install --upgrade distribute
 RUN pip install -c http://git.openstack.org/cgit/openstack/requirements/plain/upper-constraints.txt?h=stable/queens .
 RUN pip install uwsgi
 
