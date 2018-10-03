@@ -15,7 +15,7 @@ $(function(){
 				$(this).addClass('active');
 				$('.transform').addClass("login-active");
 				$('.border-active').addClass('border-signup');
-				
+			    $('.border-active').css('display','block');	
 			});
 			$('#signup').click( function(e){
 				e.stopPropagation();
@@ -26,7 +26,7 @@ $(function(){
 				$(this).addClass('active');
 				$('.border-active').removeClass('border-signup');
 				$('.transform').removeClass('login-active');
-				
+			$('.border-active').css('display','block');	
 			});
 			$('.menu-hover').click(function(e){
 					e.stopPropagation();
@@ -36,6 +36,9 @@ $(function(){
             
                $('#dropdown').hide();
                $('.identity-forms').removeClass('identity-active');
+               $('.border-active').css('display','none');
+               $('#login').removeClass('active');
+$('#signup').removeClass('active');
             });
            
 

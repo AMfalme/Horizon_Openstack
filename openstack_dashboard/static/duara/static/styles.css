@@ -165,7 +165,7 @@ margin: 0 auto;
 	margin: -60px auto;
 }
 .menu-border{
-	box-shadow: -7px -12px 12px 20px #778a91;
+	box-shadow:9px -20px 9px 17px #778a91;
 }
 
 
@@ -236,11 +236,17 @@ color: #000;
 	margin: 0 auto;
 }
 .info-top, .info-bottom{
-    padding: 20px;
+  
 
 }
 .owl-carousel div{
 	width: 100%; 
+}
+.info{
+	width: 150px;
+	background-color: rgba(18, 25, 27, 0.078);
+	display: inline-block;
+	padding: 10px;
 }
 .info h6{
 	color: #778a91;
@@ -325,7 +331,7 @@ color: #000;
 	 font-size: 50px;
 	 color: #922785;
 }
-.info .Scalable, .info .cloud{
+.Scalable,  .cloud{
 	animation: fadeInRight 1.25s cubic-bezier(0.4, 0, 0.1, 1) 0.5s 1 forwards;
 	 font-size: 50px;
 	 color: #922785;
@@ -343,7 +349,7 @@ color: #000;
    
 }
 .limit-info{
-	margin: 100px auto;
+	margin:30px auto;
 	animation-delay: 12s;
 	-webkit-animation:  25s infinite linear;
 
@@ -470,11 +476,11 @@ button.subscribe{
 	width: 400px;
     margin: 0 auto;
     border: 1px solid #542e63;
-    padding: 0 30px;
+    padding: 30px;
     border-radius: 2px;
     background: #542e63;
     backface-visibility: hidden;
-    height: 400px;
+   
     visibility: visible;
 
  
@@ -516,9 +522,13 @@ content: " ";
     transition: 1s;
     display: none;
 }
-.identity-active .border-active{
-	display: block;
+
+
+
+.active .border-active{
+    display:block;
 }
+
 .signup{
 	display: block;
 	
