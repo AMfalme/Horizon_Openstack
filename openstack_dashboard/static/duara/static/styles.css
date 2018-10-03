@@ -8,6 +8,11 @@
      font-display: auto;
     src: url("../Fonts/Circular Pro/CircularStd-Medium.otf") format("opentype");
 }
+@font-face {
+    font-family: circular-medium;
+     font-display: auto;
+    src: url("../Fonts/Circular Pro/circular-medium.otf") format("opentype");
+}
 
 @font-face {
     font-family: circular-pro-Bold;
@@ -31,6 +36,7 @@ body{
 	font-family: 'circular-pro-medium' !important;
 
 }
+
 * {
     margin: 0;
     padding: 0;
@@ -134,7 +140,8 @@ nav.navigation ul li a:hover, nav.navigation ul li a.active{
 }
 .landing-section h2{
 	font-size: 38px;
-	color: #580b77;
+	color: #23052f;
+	
 }
 .block{
 	display: block;
@@ -207,6 +214,7 @@ color: #000;
 	display: block;
 	position: relative;
 	overflow: hidden;
+	margin: 35px;
 }
 .services li{
 	text-align: center;
@@ -217,6 +225,24 @@ color: #000;
 	margin-top: 20px;
 
 
+}
+.progress{
+	    width: 50px;
+	    display: inherit;
+	    display: inline-block;
+	    margin: 0 !important;
+}
+div[class^='story'], div[class*=' story']{
+    color: #86979d;
+    border: 1px solid #86979d;
+    width: 100px;
+    display: inline-block;
+    height: 100px;
+    border-radius: 50%;
+    padding-top: 40px;
+}
+.user-story{
+	margin: 25px auto;
 }
 .owl-carousel{
 	padding: 20px;
@@ -317,6 +343,7 @@ color: #000;
 }
 .wow{
 	visibility: hidden;
+	opacity: 0;
 }
 .info div{
 	    margin: 0 auto;
@@ -327,12 +354,12 @@ color: #000;
    
 }
 .info .flexible, .info .extensible{
-	 animation: fadeInLeft 1.25s cubic-bezier(0.4, 0, 1, 1) 0.5s 1 forwards;
+	 animation: fadeIn 1.25s cubic-bezier(0.4, 0, 1, 1) 0.5s 1 forwards;
 	 font-size: 50px;
 	 color: #922785;
 }
 .Scalable,  .cloud{
-	animation: fadeInRight 1.25s cubic-bezier(0.4, 0, 0.1, 1) 0.5s 1 forwards;
+	animation: fadeIn 1.25s cubic-bezier(0.4, 0, 0.1, 1) 0.5s 1 forwards;
 	 font-size: 50px;
 	 color: #922785;
 	 visibility: visible;	
@@ -359,7 +386,7 @@ color: #000;
 	color: #000;
 	text-align: center;
 	padding: 0 35px;
-	font-size: 16px;
+	font-size: 20px;
 }
 .purple-shade{
 	
@@ -462,7 +489,7 @@ button.subscribe{
 	width: 100px;
 	height: 100px;
 	visibility: visible;
-	animation-name: rotateA;
+	
 }
 .extensible{
 	background-image: url("../img/images/web icons/web icon-05.png");
@@ -472,6 +499,9 @@ button.subscribe{
 	height: 100px;
 	visibility: visible;
 }
+.hr{
+	border-bottom: 1px solid grey;
+}
 .login, .signup{
 	width: 400px;
     margin: 0 auto;
@@ -480,7 +510,8 @@ button.subscribe{
     border-radius: 2px;
     background: #542e63;
     backface-visibility: hidden;
-   
+   display: block;
+   opacity: 1;
     visibility: visible;
 
  
@@ -502,7 +533,7 @@ content: " ";
     border-width: 10px;
     border-color: transparent transparent #542e63 transparent;
     position: relative;
-    top: -26px;
+    top: -57px;
     right: 0;
 }
 .login:before{
