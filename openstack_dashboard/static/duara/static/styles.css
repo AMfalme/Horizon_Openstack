@@ -13,7 +13,11 @@
      font-display: auto;
     src: url("../Fonts/Circular Pro/circular-medium.otf") format("opentype");
 }
-
+@font-face {
+    font-family: circular-std-Book;
+     font-display: auto;
+    src: url("../Fonts/Circular Pro/CircularStd-Book.otf") format("opentype");
+}
 @font-face {
     font-family: circular-pro-Bold;
      font-display: auto;
@@ -84,6 +88,22 @@ nav.navigation ul li a:hover, nav.navigation ul li a.active{
     border-radius: 2px;
     box-shadow: 0px 2px 1px 0px rgb(132, 149, 155);
 }
+.menu-scroll{
+	position: fixed;
+    transition-duration: 2s;
+    
+    padding-right: 15px;
+    padding-left: 15px;
+    background-color: #542e63;
+    width: 100%;
+    z-index: 10;
+}
+.menu-scroll a{
+	color: #fff !important;
+}
+.menu-scroll .menu-hover:after{
+	border-color: #ffffff transparent transparent;
+}
 .identity-active{
 	display: block !important;
 }
@@ -91,16 +111,16 @@ nav.navigation ul li a:hover, nav.navigation ul li a.active{
 	
 	padding: 10px;
 	
-	margin: 5px;
-    position: absolute;
+	margin: 80px;
+    position: fixed;
   
     opacity: 15;
     z-index: 10;
     display: none;
-        margin-left: 60px;
+        margin-left: 90px;
 }
 .identity-forms .signup:before {
-    left: 50px;
+    
 }
 .identity-forms .login:before {
     right: -245px;
@@ -141,7 +161,10 @@ nav.navigation ul li a:hover, nav.navigation ul li a.active{
 .landing-section h2{
 	font-size: 38px;
 	color: #23052f;
-	
+	width: 65%;
+	margin: 0 auto;
+	min-width: 200px;
+
 }
 .block{
 	display: block;
@@ -214,7 +237,8 @@ color: #000;
 	display: block;
 	position: relative;
 	overflow: hidden;
-	margin: 35px;
+	margin: 35px auto;
+	text-align: center;
 }
 .services li{
 	text-align: center;
@@ -244,6 +268,10 @@ div[class^='story'], div[class*=' story']{
 .user-story{
 	margin: 25px auto;
 }
+.story-active{
+	color: #000 !important;
+    border-color: #000 !important;
+}
 .owl-carousel{
 	padding: 20px;
 }
@@ -270,9 +298,21 @@ div[class^='story'], div[class*=' story']{
 }
 .info{
 	width: 150px;
-	background-color: rgba(18, 25, 27, 0.078);
+	border: 1px solid rgba(18, 25, 27, 0.078);
 	display: inline-block;
 	padding: 10px;
+}
+.info-active{
+	display: block !important;
+}
+.info.active, .info:hover{
+	background-color: rgba(18, 25, 27, 0.078);
+	cursor: pointer;
+}
+.boxed-white{
+	min-height: 500px;
+	width: 100%;
+	
 }
 .info h6{
 	color: #778a91;
@@ -284,12 +324,19 @@ div[class^='story'], div[class*=' story']{
 	color: #000;
 }
 .product{
-	margin: 0px auto 70px;
+	
 	min-height: 360px;
 	padding: 20px;
-	border: 1px solid rgb(3, 0, 33);
-	border-radius: 8px;
+
 	
+}
+.purple-shade{
+	position: relative;
+	
+	background-image: url(../img/images/map.png);
+	
+    background-size: cover;
+ 	background-attachment: fixed;
 }
 
 .product h4{
@@ -339,7 +386,7 @@ div[class^='story'], div[class*=' story']{
     
 }
 .wording p{
-	color: #000000;
+	color: #fff;
 }
 .wow{
 	visibility: hidden;
@@ -381,20 +428,58 @@ div[class^='story'], div[class*=' story']{
 	-webkit-animation:  25s infinite linear;
 
 }
+.target-info div{
+	display: none;
 
+}
+.target-info p{
+	font-family: 'circular-std-Book';
+    font-size: 18px;
+   
+    padding: 30px;
+}
+.select-info div{
+	display: inline-block;
+}
+.line{
+	border-top: 1px solid grey;
+	width: 5px;
+	margin-bottom: 3px;
+
+}
+.target-info h5{
+	color: #000;
+}
+.text-normal{
+	font-size: 18px;
+}
 .pitch{
 	color: #000;
 	text-align: center;
 	padding: 0 35px;
 	font-size: 20px;
 }
-.purple-shade{
-	
+.purple-shade:before{
+	background: linear-gradient(217deg, rgba(125, 32, 123, 0.88),
+	rgba(255,0,0,0) 70.71%), linear-gradient(127deg, 
+	rgba(36, 18, 47, 0.71), rgba(0,255,0,0) 70.71%),
+	linear-gradient(336deg, rgba(17, 17, 53, 0.8), 
+	rgba(0,0,255,0) 70.71%);
+	padding: 40px;
+	position: absolute;
+	width: 100%;
+	top: 0;
+	content: '';
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: block;
+
 	
 }
 .border-signup{
 	transition: .1s;
-left: 260px !important;
+left: 65px !important;
 }
 .shade{
 	background-color: #d7ded7;
@@ -536,12 +621,12 @@ content: " ";
     top: -57px;
     right: 0;
 }
-.login:before{
-	 right: -80px;
-}
 .signup:before{
+	 right: -240px !important;
+}
+.login:before{
 	
-    left: -115px;
+    left: 50px;
     
 }
 .border-active{
@@ -549,7 +634,7 @@ content: " ";
     bottom: -63px;
     position: relative;
     width: 60px;
-    left: 70px;
+    left: 255px;
     transition: 1s;
     display: none;
 }

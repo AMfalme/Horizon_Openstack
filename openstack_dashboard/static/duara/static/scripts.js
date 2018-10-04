@@ -1,5 +1,26 @@
 $(function(){
-	
+			function animate_simplicity(){
+
+				$('.story-login').stop(true, true).delay(3000).addClass('story-active');
+				$('.story-login').promise().done(function(){
+    				// will be called when all the animations on the queue finish
+
+
+				});
+			}
+
+			$('.info').click(
+				function(){
+					target = $(this).attr('id');
+					console.log(target);
+					$('.target-info> .info-active').removeClass('info-active');
+					$('.'+target).addClass('info-active');
+					$('.info').removeClass('active');
+					$(this).addClass('active');
+
+				}
+				);
+			setInterval( animate_simplicity(), 5000);
 			$('.identity-forms').click(
 					function(e){
 						e.stopPropagation();
@@ -40,8 +61,15 @@ $(function(){
                $('#login').removeClass('active');
 $('#signup').removeClass('active');
             });
-           
-
+           var slideNav = $('.menu-border').height();
+           console.log(slideNav);
+			$(window).scroll(
+				function(e){
+					if ($(this).scrollTop() > 200) {
+						$('.menu-border').addClass('menu-scroll');
+					}
+				}
+				);
 		});
 		$(document).ready(function(){
 				$(".owl-carousel").owlCarousel({
