@@ -117,14 +117,12 @@ nav.navigation ul li a:hover, nav.navigation ul li a.active{
 .identity-forms{
 	
 	padding: 10px;
-	
-	margin: 80px;
+    margin: 15px;
     position: fixed;
-  
     opacity: 15;
     z-index: 10;
     display: none;
-        margin-left: 90px;
+    margin-left: 60px;
 }
 .identity-forms .signup:before {
     
@@ -157,7 +155,7 @@ nav.navigation ul li a:hover, nav.navigation ul li a.active{
     border-radius: 4px;
 }
 .landing-section{
-	min-height: 600px;
+	
 	margin: 50px auto 0;
     color: #000;
     text-align: center;
@@ -206,9 +204,9 @@ margin: 0 auto;
 	transition-duration: 1s;
 }
 .menu-scroll .logo a img{
-						width: 109px;
-    					height: 45px;
-					    margin: 30px auto 0 25px;
+						width: 120px;
+					    height: 50px;
+					    margin: 17px auto 0 25px;
 						}
 
 
@@ -342,13 +340,15 @@ div[class^='story'], div[class*=' story']{
 	
 	min-height: 360px;
 	padding: 20px;
+	background-color: rgba(129, 150, 154, 0.17);
+	margin-top: 10px;
 
 	
 }
 .purple-shade{
 	position: relative;
 	
-	background-image: url(../img/images/map.png);
+	
 	
     background-size: cover;
  	background-attachment: fixed;
@@ -356,11 +356,11 @@ div[class^='story'], div[class*=' story']{
 
 .product h4{
 	text-align: center;
-    color: #000;
+    color: #fff;
     text-transform: uppercase;
-    font-size: 21px;
+    font-size: 15px;
     letter-spacing: 0.1px;
-    margin: 30px auto; 
+    margin: 15px auto;
 }
 .product i{
 	display: block;text-align: center;
@@ -475,11 +475,11 @@ div[class^='story'], div[class*=' story']{
 	font-size: 20px;
 }
 .purple-shade:before{
-	background: linear-gradient(217deg, rgba(125, 32, 123, 0.88),
-	rgba(255,0,0,0) 70.71%), linear-gradient(127deg, 
-	rgba(36, 18, 47, 0.71), rgba(0,255,0,0) 70.71%),
-	linear-gradient(336deg, rgba(17, 17, 53, 0.8), 
-	rgba(0,0,255,0) 70.71%);
+	background: linear-gradient(217deg, 
+		rgb(125, 32, 123),  rgba(83, 61, 97, 0.85) 70.71%), 
+		linear-gradient(127deg,   rgba(36, 18, 47, 0.97), 
+		rgba(0, 255, 0, 0.24) 70.71%),  linear-gradient(336deg, 
+		rgb(17, 17, 53), rgba(0,0,255,0) 70.71%);
 	padding: 40px;
 	position: absolute;
 	width: 100%;
@@ -546,7 +546,7 @@ button.subscribe{
 }
 .cloud{
 	background-image: url("../img/images/Fast.svg");
-	background-size: contain;
+	background-size: 35%;
 	background-repeat: no-repeat;
 	width: 100px;
 	height: 100px;
@@ -584,8 +584,8 @@ button.subscribe{
     margin: 0 auto;
 }*/
 .Scalable{
-	background-image: url("../img/images/web icons/web icon-03.png");
-	background-size: contain;
+	background-image: url("../img/images/feather.png");
+	background-size: 90%;
 	background-repeat: no-repeat;
 	width: 100px;
 	height: 100px;
@@ -593,8 +593,8 @@ button.subscribe{
 	
 }
 .extensible{
-	background-image: url("../img/images/web icons/web icon-05.png");
-	background-size: contain;
+	background-image: url("../img/images/reliable.png");
+	background-size: 75%;
 	background-repeat: no-repeat;
 	width: 100px;
 	height: 100px;
