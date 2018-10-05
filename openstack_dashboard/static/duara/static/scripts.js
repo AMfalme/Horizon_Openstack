@@ -71,6 +71,7 @@ $('#signup').removeClass('active');
 				function(e){
 				
 					if ($(this).scrollTop() > slideNav) {
+						$('.identity-forms').addClass('identity-scroll');
 				
 						$('.menu-border').addClass('menu-scroll');
 						$('.logo-img').attr('src','img/purple-theme/transparent.png');
