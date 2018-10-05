@@ -90,13 +90,20 @@ nav.navigation ul li a:hover, nav.navigation ul li a.active{
 }
 .menu-scroll{
 	position: fixed;
-    transition-duration: 2s;
+    transition-duration: 1s;
     
     padding-right: 15px;
     padding-left: 15px;
     background-color: #542e63;
     width: 100%;
     z-index: 10;
+}
+.menu-scroll .Title{
+	color: #fff;
+    position: absolute;
+    margin: -8px auto 0 15px;
+    display: block;
+    width: 150px;
 }
 .menu-scroll a{
 	color: #fff !important;
@@ -196,8 +203,13 @@ margin: 0 auto;
 }
 .menu-border{
 	box-shadow:9px -20px 9px 17px #778a91;
+	transition-duration: 1s;
 }
-
+.menu-scroll .logo a img{
+						width: 109px;
+    					height: 45px;
+					    margin: 30px auto 0 25px;
+						}
 
 
 .form-triggers{
@@ -288,6 +300,9 @@ div[class^='story'], div[class*=' story']{
 	background-repeat: no-repeat;
 	background-position: center;
 	margin: 0 auto;
+}
+.top-nav{
+	
 }
 .info-top, .info-bottom{
   
@@ -530,11 +545,12 @@ button.subscribe{
     width: 100%;
 }
 .cloud{
-	background-image: url("../img/images/web icons/webicon-08.png");
+	background-image: url("../img/images/Fast.svg");
 	background-size: contain;
 	background-repeat: no-repeat;
 	width: 100px;
 	height: 100px;
+	background-position: center;
 }
 .dot{
 	background-image: url(../img/images/marker.png);
