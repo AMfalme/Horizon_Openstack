@@ -78,9 +78,14 @@ $('#signup').removeClass('active');
 					} else  {
 						$('.menu-border').removeClass('menu-scroll');
 						$('.logo-img').attr('src','img/purple-theme/horizontal.svg');
-				
+						$('.identity-forms').removeClass('identity-scroll');
 					}}
 				
+				);
+			$(
+			// 	function validate(){
+			// 	alert('thanls ');
+			// }
 				);
 		});
 		$(document).ready(function(){

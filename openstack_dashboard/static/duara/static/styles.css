@@ -88,10 +88,17 @@ nav.navigation ul li a:hover, nav.navigation ul li a.active{
     border-radius: 2px;
     box-shadow: 0px 2px 1px 0px rgb(132, 149, 155);
 }
+.easy-deploy{
+	color: #fff;
+}
+.menu-border{
+	backface-visibility: hidden;
+	transition-duration: 1s;
+}
 .menu-scroll{
 	position: fixed;
-    transition-duration: 1s;
-    
+ 	transition-duration: 1s;   
+    backface-visibility: hidden;
     padding-right: 15px;
     padding-left: 15px;
     background-color: #542e63;
@@ -109,7 +116,7 @@ nav.navigation ul li a:hover, nav.navigation ul li a.active{
 	color: #fff !important;
 }
 .menu-scroll .menu-hover:after{
-	border-color: #ffffff transparent transparent;
+	
 }
 .identity-active{
 	display: block !important;
@@ -154,20 +161,34 @@ nav.navigation ul li a:hover, nav.navigation ul li a.active{
     padding: 20px;
     border-radius: 4px;
 }
+.landing-section:before{
+	content: "";
+    position: absolute;
+    background: url(../img/africa-map.png);
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+    opacity: 0.8;
+    width: 87%;
+    height: 577px;
+    display: block;
+
+}
 .landing-section{
 	
-	margin: 50px auto 0;
+	
     color: #000;
     text-align: center;
     border-radius: 4px;
-
+    overflow: hidden;
   
 }
 .landing-section h2{
 	font-size: 38px;
-	color: #23052f;
+	color: #fff;
 	width: 65%;
-	margin: 0 auto;
+	margin: 30px auto;
 	min-width: 200px;
 
 }
@@ -199,10 +220,7 @@ margin: 0 auto;
 .landing-section .left-side{
 	margin: -60px auto;
 }
-.menu-border{
-	box-shadow:9px -20px 9px 17px #778a91;
-	transition-duration: 1s;
-}
+
 .menu-scroll .logo a img{
 						width: 120px;
 					    height: 50px;
@@ -469,17 +487,17 @@ div[class^='story'], div[class*=' story']{
 	font-size: 18px;
 }
 .pitch{
-	color: #000;
+	color: #ffb8f6;
 	text-align: center;
 	padding: 0 35px;
 	font-size: 20px;
 }
 .purple-shade:before{
-	background: linear-gradient(217deg, 
+	/*background: linear-gradient(217deg, 
 		rgb(125, 32, 123),  rgba(83, 61, 97, 0.85) 70.71%), 
 		linear-gradient(127deg,   rgba(36, 18, 47, 0.97), 
 		rgba(0, 255, 0, 0.24) 70.71%),  linear-gradient(336deg, 
-		rgb(17, 17, 53), rgba(0,0,255,0) 70.71%);
+		rgb(17, 17, 53), rgba(0,0,255,0) 70.71%);*/
 	padding: 40px;
 	position: absolute;
 	width: 100%;
@@ -545,12 +563,12 @@ button.subscribe{
     width: 100%;
 }
 .cloud{
-	background-image: url("../img/images/Fast.svg");
-	background-size: 35%;
-	background-repeat: no-repeat;
-	width: 100px;
-	height: 100px;
-	background-position: center;
+	background-image: url("../img/layers-256.png");
+	background-size: 61%;
+    background-repeat: no-repeat;
+    width: 115px;
+    height: 100px;
+    background-position: center;
 }
 .dot{
 	background-image: url(../img/images/marker.png);
@@ -600,8 +618,26 @@ button.subscribe{
 	height: 100px;
 	visibility: visible;
 }
+.rise{
+	margin:-50px auto 75px;
+
+	transition-duration: 3s;
+}
+hr.hr{
+	border-bottom: 1px solid #000;
+	width: 80%;
+}
 .hr{
-	border-bottom: 1px solid grey;
+	border-bottom: 1px solid white;
+    width: 200px;
+    margin: 0 auto;
+}
+.purple-theme{
+	background-image: linear-gradient( 135deg, rgb(91, 51, 109) 0%, rgb(191, 60, 98) 100%);
+	overflow: hidden;
+	
+	height: 86vh;
+    max-height: 577px;
 }
 .login, .signup{
 	width: 400px;
@@ -758,7 +794,7 @@ content: " ";
 	color: #663ab6;
 font-size: 20px;
 text-align: center;
-margin: 160px auto 40px;
+
 text-transform: uppercase;
 font-weight: 600;
 }
@@ -769,10 +805,11 @@ font-weight: 600;
 	color: #040a21;
 }
  .clompute img{
- 	width: 100px;
-    margin: 0 auto;
+ 	margin: 25px auto;
     display: block;
- }
+    width: 100px;
+    height: 90px;
+}
 .cloudcompute img{
 	width: 300px;
 margin: 5px auto -180px auto;
@@ -785,9 +822,15 @@ left: 167px;
 margin: 10px !important;
 width: 85px !important;
 }
-/*.cloudcompute{
-	margin: -30px auto -80px auto;
-}*/
+.clompute{
+box-shadow:-3px -3px 20px 2px rgba(8, 0, 0, 0.25);
+    transition-duration: 1s;
+   	background-color: #fff;
+    margin: 20px;
+    padding: 4px;
+    cursor: pointer;
+}
+
 .channels{
 	
 }
