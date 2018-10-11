@@ -8,6 +8,16 @@ $(function(){
 
 				});
 			}
+			   /*-------------------------------------------------------------------------*
+     *                   04. Smooth scroll to anchor                           *
+     *-------------------------------------------------------------------------*/
+      $('a.smooth_scroll').on("click", function (e) {
+          e.preventDefault();
+          var anchor = $(this);
+          $('html, body').stop().animate({
+              scrollTop: $(anchor.attr('href')).offset().top - 50
+          }, 1000);
+      });
 
 			$('.info').click(
 				function(){
