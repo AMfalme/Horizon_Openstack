@@ -11,7 +11,7 @@ $(function(){
 			   /*-------------------------------------------------------------------------*
      *                   04. Smooth scroll to anchor                           *
      *-------------------------------------------------------------------------*/
-      $('a.smooth_scroll').on("click", function (e) {
+      $('a.nav_scroll').on("click", function (e) {
           e.preventDefault();
           var anchor = $(this);
           $('html, body').stop().animate({
