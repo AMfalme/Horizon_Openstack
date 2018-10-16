@@ -6,7 +6,8 @@
 @font-face {
     font-family: circular-pro-medium;
      font-display: auto;
-     font-weight: 100;
+     
+
     src: url("../Fonts/Circular Pro/CircularStd-Medium.otf") format("opentype");
 }
 @font-face {
@@ -29,6 +30,11 @@
      font-display: auto;
     src: url("../Fonts/Proxima Nova/Mark Simonson - Proxima Nova Regular.otf") format("opentype");
 }
+@font-face {
+    font-family:  circular-book;
+     font-display: auto;
+    src: url("../Fonts/Circular Pro/circular-book.otf") format("opentype");
+}
 html{
 	font-family: 'circular-pro-medium' !important;
 }
@@ -38,7 +44,7 @@ body{
 	padding: 0;
 	color: #85969c;
 	background-color:#F2F3F2;
-	font-family: 'circular-medium' !important;
+	font-family: 'circular-book' !important;
 
 }
 
@@ -65,8 +71,7 @@ a:hover, a:focus{
 nav.navigation ul li{
 	list-style: none;
     display: inline-block;
-    margin: 22px auto;
-    padding: 12px;
+    padding: 30px;
     float: left;
     font-size: 16px;
     font-weight: 500;
@@ -83,6 +88,7 @@ nav.navigation ul li a{
     text-transform: capitalize;
     font-family: "circular-pro-Bold";
     font-size: 15px;
+   
 	}
 nav.navigation ul li a:hover, nav.navigation ul li a.active{
 	text-decoration: none;
@@ -109,7 +115,9 @@ nav.navigation ul li a:hover, nav.navigation ul li a.active{
     backface-visibility: hidden;
     padding-right: 15px;capitalize
     padding-left: 15px;
+
     background-image: linear-gradient( 135deg, hsl(302, 58%, 36%) 0%, rgb(191, 60, 98) 100%);
+
     width: 100%;
     z-index: 10;
 }
@@ -185,11 +193,13 @@ nav.navigation ul li a:hover, nav.navigation ul li a.active{
 	float: left;
 }
 .landing-section h2{
+
 	font-size: 30px;
 	color: #fff;
 	
 		min-width: 200px;
 	text-align: left;
+
 
 }
 .block{
@@ -325,10 +335,16 @@ div[class^='story'], div[class*=' story']{
 	width: 100%; 
 }
 .info{
-	width: 150px;
-	border: 1px solid rgba(18, 25, 27, 0.078);
-	display: inline-block;
-	padding: 10px;
+	width: 200px;
+border: 1px solid rgba(18, 25, 27, 0.078);
+display: inline-block;
+padding: 2px;
+background-color: rgba(18, 25, 27, 0.078);
+border-top-left-radius: 3px;
+border-top-right-radius: 3px;
+}
+.info-active div{
+	display: block !important;
 }
 .info-active{
 	display: block !important;
@@ -343,10 +359,19 @@ div[class^='story'], div[class*=' story']{
 	
 }
 .info h6{
+	font-size: 20px;
 	color: #778a91;
-    border-bottom: 1px solid #778A91;
-    line-height: 29px;
-    margin-top: -25px;
+	text-align: center;
+}
+.info.active h6{
+	color: #982a87;
+}
+.info.active{
+	background-color: #fff;
+	
+	border-bottom: none;
+	height: 50px;
+	z-index: 30;
 }
 .info p{
 	color: #000;
@@ -360,15 +385,79 @@ div[class^='story'], div[class*=' story']{
 
 	
 }
+.section-bg div{
+	
+	margin-bottom: 40px;
+	padding: 30px;
+	background-color: #fff;
+	transform: scale(1);
+	transition-duration: 0.4s;
+	min-height: 350px;
+	border-radius: 20px;
+}
+.section-bg div:hover{
+	transform: scale(1.02, 1.02);
+box-shadow:0 10px 20px rgba(56, 10, 49, 0.1);
+}
+#products p{
+	font-size: 15px;
+}
+#products .heading{
+	margin: 50px auto;
+	text-transform: uppercase;
+	line-height: 40px;
+	font-size: 36px;
+	font-weight: 600;
+}	
+#products i{
+	font-size: 41px;
+	text-align: center;
+	margin: 25px auto;
+	display: block;
+	color: #8000804d;
+}
+.prod-icon:before{
+	content: "\e853";
+}
+#products header h3{
+	font-family: 'circular-pro-medium' !important;
+	text-align: center;
+	color: #992a86;
+}
 .purple-shade{
 	position: relative;
-	
-	
-	
+	background-image: -moz-linear-gradient( 135deg, hsl(302, 58%, 36%) 0%, rgb(191, 60, 98) 100%);
+	background-image: -webkit-linear-gradient( 135deg, hsl(302, 58%, 36%) 0%, rgb(191, 60, 98) 100%);
+	background-image: -ms-linear-gradient( 135deg, hsl(302, 58%, 36%) 0%, rgb(191, 60, 98) 100%);
+	background-image: linear-gradient( 135deg, hsl(302, 58%, 36%) 0%, rgb(191, 60, 98) 100%);
     background-size: cover;
  	background-attachment: fixed;
+ 	min-height: 300px;
+ 	text-align: center;
 }
+.purple-shade .buttons button{
+	background-color: #fff;
+border: none;
+padding: 12px;
+border-radius: 3px;
 
+
+}
+.purple-shade .buttons{
+	margin: 30px auto;
+	display: block;
+width: 10%;
+min-width: 250px;
+}
+.purple-shade h2{
+	margin: 60px auto 20px;
+	color: white;
+}
+.purple-shade p{
+	color: #ffb8f6;
+	width: 60%;
+	margin: 0 auto;
+}
 .product h4{
 	text-align: center;
     color: #fff;
@@ -454,7 +543,11 @@ div[class^='story'], div[class*=' story']{
 	margin:30px auto;
 	animation-delay: 12s;
 	-webkit-animation:  25s infinite linear;
-
+	
+}
+.vertical-sep{
+	border-bottom: 1px solid #982a87;
+	margin-top: -31px;
 }
 .target-info div{
 	display: none;
@@ -466,9 +559,7 @@ div[class^='story'], div[class*=' story']{
    	height: 185px;
     padding: 30px;
 }
-.select-info div{
-	display: inline-block;
-}
+
 .line{
 	border-top: 1px solid grey;
 	width: 5px;
@@ -578,27 +669,7 @@ button.subscribe{
     cursor: pointer;
     background-size: contain;
     background-repeat: no-repeat;
-}/*
-.Ethiopia{
-	right: 770px;
-    top: 320px;
 }
-.Kenya{
-	right: 785px;
-    top: 330px;
-}
-.Nigeria{
-	right: 1150px;
-    top: 380px;
-}
-.SouthAfrica{
-	right: 230px;
-    margin: 0 auto;
-}
-.Tunisia{
-	left: 250px;
-    margin: 0 auto;
-}*/
 .Scalable{
 	background-image: url("../img/images/feather.png");
 	background-size: 90%;
@@ -607,6 +678,20 @@ button.subscribe{
 	height: 100px;
 	visibility: visible;
 	
+}
+#features{
+	
+	margin: 30px auto;
+}
+#features p{
+	text-align: center;
+	color: #777;
+	margin: 0 auto;
+	max-width: 800px;
+} 
+#features h1{
+	text-align: center;
+	margin: 50px auto;
 }
 .extensible{
 	background-image: url("../img/images/reliable.png");
@@ -622,8 +707,8 @@ button.subscribe{
 	transition-duration: 3s;
 }
 hr.hr{
-	border-bottom: 1px solid #000;
-	width: 80%;
+	    border-bottom: 1px solid #f8e3f0;
+	width: 40%;
 }
 .hr{
 	border-bottom: 1px solid white;
@@ -654,8 +739,11 @@ hr.hr{
 	
 }
 .centered{
-	margin-top: -100px;
-	padding-left: 100px;
+
+		padding-left: 70px;
+	max-width: 800px;
+	font-family: circular-medium;
+
 }
 .centered button{
 	background-color: transparent;
@@ -722,14 +810,29 @@ content: " ";
 .active .border-active{
     display:block;
 }
-
+#signup{
+	border: 1px solid #a60a60;
+    border-radius: 4px;
+    width: 98px;
+    text-align: center;
+    color: #a60a60;
+    padding: 8px;
+    margin: 22px auto 0;
+    border-radius: 20px;
+}
+#signup a{
+	color: #a60a60;
+}
+form#signupform label{
+	color: red;
+}
 .signup{
 	display: block;
 	
 	margin: 0px auto;
 }
 .login-active .signup{
-	display: none; !important;
+	display: none !important;
 	
 }
 .login{
@@ -768,14 +871,12 @@ content: " ";
 .login form{
 	margin-top: 30px;
 }
-.pricing{
+#pricing{
 	width: 80%;
 	margin: 30px auto;
-	border:1px solid #030021;
 	padding: 20px;
-	border-radius: 4px;
 }
-.pricing h3{
+#pricing h3{
 	text-align: center;
 	text-transform: uppercase;
 	font-weight: 300;
@@ -787,6 +888,12 @@ content: " ";
 .right-side{
 	
 	color: #778a91;
+}
+.right-forms{
+	position: absolute;
+    right: 145px;
+    min-width: 350px;
+    top: 60px;
 }
 .right-side h2{
 
@@ -825,14 +932,14 @@ text-transform: uppercase;
 
 }
 .clompute ul li{
-	list-style: none;
+	list-style: disc;
 	text-align: left;
-    font-size: 16px;
-	color: #040a21;
+    font-size: 14px;
+	color: rgba(4, 10, 33, 0.72);
 }
- .clompute img{
- 	width: 48px;
-    height: 40px;
+ .clompute i{
+ 	color: rgba(158, 45, 128, 0.82);
+	font-size: 30px;
 }
 .cloudcompute img{
 	width: 300px;
@@ -846,18 +953,41 @@ left: 167px;
 margin: 10px !important;
 width: 85px !important;
 }
+.separator:before{
+	content: "";
+	border-left: 1px solid #9477b438;
+	position: absolute;
+	width: 1px;
+	height: 60%;
+margin: -30px;
+margin-top: 30px;
+
+}
+.bck-shade{
+	background-color: #faf6fb;
+}
 .clompute{
-border: 1px solid #eee;
-    
+	transform: scale(1);
     background-color: #fff;
+    padding: 50px;
+    transition-duration: 1s;
     
-    padding: 20px;}
+}
+.clompute:hover{
+	transform: scale(1.1);
+	transition-duration: 1s;
+}
+.clompute ul{
+	    padding-left: 20px;
+
+}
 
 .duara-cloud{
 	background-image: url('../img/duaracloud.png');
-	height: 380px;
-    background-repeat: no-repeat;
-    background-size: contain;
+	height: 280px;
+	background-repeat: no-repeat;
+	background-size: 50%;
+	background-position: center;
 }
 .channels img{
 	width: 60%;

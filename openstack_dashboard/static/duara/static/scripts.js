@@ -1,4 +1,5 @@
 $(function(){
+		//this function is currently serving no purpose but will hopefully be used to animate the simplicity process
 			function animate_simplicity(){
 
 				$('.story-login').stop(true, true).delay(3000).addClass('story-active');
@@ -15,10 +16,14 @@ $(function(){
           e.preventDefault();
           var anchor = $(this);
           $('html, body').stop().animate({
+
               scrollTop: $(anchor.attr('href')).offset().top - 200
           }, 1000);
-      });
 
+      });
+      $("#signupform").validate(
+      	
+      	);
 			$('.info').click(
 				function(){
 					target = $(this).attr('id');

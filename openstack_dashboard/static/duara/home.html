@@ -12,7 +12,7 @@
     <link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="theme-color" content="#d7ded7">
     <meta name=viewport content="width=device-width, initial-scale=1, user-scalable=yes">
-    <link rel="stylesheet" type="text/css" href="static/fontawesome/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link rel="stylesheet" href="static/owlcarousel/owl.carousel.min.css">
 	<link rel="stylesheet" href="static/owlcarousel/owl.theme.default.min.css">
     <!-- favicon -->
@@ -38,7 +38,10 @@
 		</div>
 		<nav class="col-md-10 navbar  collapse navbar-collapse navigation">
 			<ul class="right ">
+				
+				
 				<li>
+
 					<a class="nav_scroll" href="#home">
 						home
 					</a>
@@ -65,12 +68,10 @@
 		
 			<div class="form-triggers">
 				<div class="right-nav">
-					<li id="login">
-						<a href="#login">Login</a>
+					<li id="#">
+						<a href="#">Login</a>
 					</li>
-					<div class="border-active">
-						
-				</div>
+					
 					<li id="signup"  ><a href="#signup">Signup</a></li>
 					
 				</div>
@@ -84,41 +85,19 @@
 	</div>
 	</div>
 </div>
-		<div class=" container-fluid">
-				<div class="row">
-				<div class="col-md-6 col-md-offset-6 " style="min-height: 0px;">
-				<div class="left-side ">
+		
+				
+				<div class="right-forms ">
 					
 			<div class="identity-forms ">
 				<div class="transform">
-				<div class="login wow fadeInLeft">
-					<form method="post" onsubmit="return validate();">
-						
-						<div class="form-group">
-		                  <input class="form-control" name="username" placeholder="User Name" type="text" minlength="4" required>
-		                </div>
-		                <div class="form-group">
-		                  <input class="form-control" name="Password" placeholder="Password" type="password" minlength="4" required>
-		                </div>
-		                <input class="btn btn submit" type="submit" value="Login">
-
-					</form>
-					<!-- <div class="alternative">
-					<ul>
-						<a href="signup.html"><li>Create Account?</li></a>
-						<a href="#"><li>Forgot Password?</li></a>
-						<a href="#"><li>Forgot Username?</li></a>
-					</ul>
-				</div> -->
-				</div>
+			
 				<div class="signup">
-					<form>
+					<form method="POST" name="signup" id="signupform">
 						
-						<div class="form-group">
-		                  <input class="form-control" name="username" placeholder="User Name" type="text" minlength="4" required>
-		                </div>
+						
 		                <div class="form-group">
-		                  <input class="form-control" name="email" placeholder="Email Address" type="text" minlength="4" required>
+		                  <input class="form-control" name="email" placeholder="Email Address" type="email" minlength="4" required>
 		                </div>
 		                <div class="form-group">
 		                  <input class="form-control" name="Password" placeholder="Password" type="password" minlength="4" required>
@@ -140,9 +119,8 @@
 				</div>
 			</div>
 			</div>
-			</div>
-		</div>
-	</div>
+			
+	
 	<section id="home">
 	<div class="container-fluid ">
 		<div class="row">
@@ -150,7 +128,8 @@
 				<div class="col-md-6">
 					<div class="centered">
 					<h2>
-						On demand cloud computing solutions. Duara helps developers and organisations in creating and deploying their virtual machines on the fly.
+
+						On demand cloud computing solutions.<br> Duara helps developers and organisations in creating and deploying their virtual machines on the fly.
 						
 
 					</h2>
@@ -194,13 +173,23 @@
 		</div>
 	</div>
 	</section>
-	<section id="">
+	<section id="features">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+				<h1>Why choose Duara Compute</h1>
+				<p>	
+					Development and deployment of applications has never been made any easier. No overhead, no sweat. Just a click of your mouse and a few configurations and you are good to go!
+				</p>
+			</div>
+			</div>
+		</div>
 	<div class="container animated  fadeIn rise">
 		<div class="row">
 			
-			<div class="col-md-4">
-					<div class="	clompute">
-						<img src="img/images/Fast.svg">
+			<div class="col-md-3">
+					<div class="	clompute ">
+						<i class="fas fa-bolt"></i>
 				<h2 >
 					Fast. 
 				</h2>
@@ -213,9 +202,9 @@
 				
 				</div>
 			</div>
-			<div class="col-md-4">
-				<div class="	clompute">
-					<img src="img/images/feather.png">
+			<div class="col-md-3">
+				<div class="	clompute separator">
+					<i class="fab fa-simplybuilt"></i>
 				<h2 >
 					Simple. 
 				</h2>
@@ -228,9 +217,9 @@
 				
 				</div>
 			</div>
-			<div class="col-md-4 center">
-				<div class="	clompute">
-					<img src="img/images/reliable.png">
+			<div class="col-md-3">
+				<div class="	clompute separator">
+					<i class="fas fa-balance-scale"></i>
 				<h2 >
 					Reliable. 
 				</h2>
@@ -243,28 +232,31 @@
 				
 				</div>
 			</div>
-		</div>
+		
+	<!-- <div class="container">
+				<div class="row"> -->
+			
+			<div class="col-md-3">
+					<div class="	clompute separator">
+						<i class="fas fa-dollar-sign"></i>
+				<h2 >
+					Fast. 
+				</h2>
+				
+				<ul>
+					<li> Dedicated Virtual Servers</li>
+					<li>Hosting Management</li>
+					<li>Zero downtime <em>100% uptime </em></li>
+				</ul>
+				
+				</div>
+			</div>
+		
+			</div>
 
 	</div>
-	<div class="container">
-				<div class="row">
-			
-			<div class="col-md-4">
-					<div class="	clompute">
-						<img src="img/images/Fast.svg">
-				<h2 >
-					Fast. 
-				</h2>
-				
-				<ul>
-					<li> Dedicated Virtual Servers</li>
-					<li>Hosting Management</li>
-					<li>Zero downtime <em>100% uptime </em></li>
-				</ul>
-				
-				</div>
-			</div>
-			<div class="col-md-4">
+
+			<!-- <div class="col-md-4">
 				<div class="	clompute">
 					<img src="img/images/feather.png">
 				<h2 >
@@ -295,27 +287,123 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
+</section>
+
+	<section id="products" class="bck-shade">
 		<div>
-			<h3 style="text-align: center; margin-bottom: 20px; color: #83008e;">
-				At Duara, Our customers are our priority.
-			</h3>
+			
 		</div>
 		
-	<hr class="hr">
-	<section id="products">
-	<div class="container-fluid">
+	
+
+
+	<div class="container">
 		<div class="row">
-			<h2 class="heading">Our products</h2>
-			<div class="col-md-4">
+			<h2 class="heading">Our Products</h2>
+			<div class="section-bg col-md-4">
+				<div>
+				<header>
+					<h3>
+						Virtual Machines
+					</h3>
+					<i class="fas fa-server"></i>
+				</header>
+				<article>
+					<p>
+						
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, urna eu pellentesque pretium, nisi nisi fermentum enim, et sagittis dolor nulla vel sapien. Vestibulum sit amet mattis ante. Ut placerat dui eu nulla congue tincidunt ac a nibh.
+					</p>
+				</article>
+				</div>
+			</div>
+			<div class="section-bg col-md-4"><div>
+				<header>
+					<h3>
+						Block Storage
+					</h3>
+					<i class="far fa-hdd"></i>
+				</header>
+				<article>
+					<p>
+						
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, urna eu pellentesque pretium, nisi nisi fermentum enim, et sagittis dolor nulla vel sapien. Vestibulum sit amet mattis ante. Ut placerat dui eu nulla congue tincidunt ac a nibh.
+					</p>
+				</article>
+				</div>
+			</div>
+			<div class="section-bg col-md-4">
+<div>
+				<header>
+					<h3>
+						Floating IP
+					</h3>
+					<i class="fas fa-network-wired"></i>
+				</header>
+				<article>
+					<p>
+						
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, urna eu pellentesque pretium, nisi nisi fermentum enim, et sagittis dolor nulla vel sapien. Vestibulum sit amet mattis ante. Ut placerat dui eu nulla congue tincidunt ac a nibh.
+					</p>
+				</article>
+				</div>
+			</div>
+			<div class="section-bg col-md-4 col-md-offset-2"><div>
+				<header>
+					<h3>
+						Firewall As a Service (FaaS)
+					</h3>
+					<i class="fas fa-shield-alt"></i>
+				</header>
+				<article>
+					<p>
+						
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, urna eu pellentesque pretium, nisi nisi fermentum enim, et sagittis dolor nulla vel sapien. Vestibulum sit amet mattis ante. Ut placerat dui eu nulla congue tincidunt ac a nibh.
+					</p>
+				</article>
+				
+				</div>
+			</div>
+			<div class=" section-bg col-md-4 ">
+<div>
+				<header>
+					<h3>
+						Private Network
+					</h3>
+					<i class="fas fa-network-wired"></i>
+				</header>
+				<article>
+					<p>
+						
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, urna eu pellentesque pretium, nisi nisi fermentum enim, et sagittis dolor nulla vel sapien. Vestibulum sit amet mattis ante. Ut placerat dui eu nulla congue tincidunt ac a nibh.
+					</p>
+				</article>
+				</div>
+			</div>
+		</div>
+	</div>
+<hr class="hr">
+
+</section>
+
+
+<section id="pricing">
+			<div class="container ">
+		<div class="row">
+			<div>
+				<h3>
+					Our pricing model
+				</h3>
+		
+			</div>
+			<div class="col-md-12">
 				
 			</div>
 		</div>
 	</div>
-
-	<div class="container">
+		<div class="container">
 		<div class="row">
-							<div class="col-md-6 right-side">
+							<div class="col-md-12 ">
 				
 
 					
@@ -325,10 +413,8 @@
 				<div class="">
 						
 					<div class="info active" id="cloudcompute">
-					<div class="wow ">
-							<i class="fas fa-hand-holding-usd"></i>
-						</div>
-						<h6>Cheap</h6>
+					
+						<h6>Virtual Machines</h6>
 						
 						
 						
@@ -336,37 +422,75 @@
 					
 						
 					<div class="info" id="Reliabile-uptime">
-					<div class="wow cloud">
-						
-					</div>
-						<h6>Scalable</h6>
+					
+						<h6>Block storage</h6>
 						
 						
 						
 					</div>	
 					<div class="info" id="block-storage">
-						<div class="wow extensible">
-							
-						</div>
-						<h6>Simple to use</h6>
+						
+						<h6>Private Network</h6>
+						
+						
+					</div>
+					<div class="info" id="block-storage">
+						
+						<h6>Firewall As a Service</h6>
+						
+						
+					</div>
+					<div class="info" id="block-storage">
+						
+						<h6>Floating IPs</h6>
 						
 						
 					</div>
 				</div>
 			</div>
-					<div class="select-info">
-						<div class="first">O</div>
-						<div class="line"></div>
-						<div class="second">O</div>
-						<div class="line"></div>
-						<div class="third">O</div>
-					</div>
+					
 				<div class="target-info">
 					<div class="cloudcompute info-active">
-						<h5>Affordable Prices</h5>
-						<p>
-							We give you a robust platform for very affordable prices. Get a virtual private cloud system for as low as $10 only
-						</p>
+						<div class="pricing-table">
+								<table class="table table-stripped">
+									<tr class="thead-dark"">
+										<th></th>
+										<th>CPU CORE</th>
+										<th>MEMORY</th>
+										<th>SSD STORAGE</th>
+										<th>TRANSFER</th>
+									</tr>
+									
+									<tr>
+										<td>5$/month</td>
+										<td>1 CPU Core</td>
+										<td>1 GB</td>
+										<td>25 GB Storage</td>
+										<td>40GB Transfer</td>
+									</tr>
+									<tr>
+										<td>10$/month</td>
+										<td>2 CPU Core</td>
+										<td>2 GB</td>
+										<td>50 GB Storage</td>
+										<td>80GB Transfer</td>
+									</tr>
+									<tr>
+										<td>20$/month</td>
+										<td>4 CPU Core</td>
+										<td>3 GB</td>
+										<td>75 GB Storage</td>
+										<td>120GB Transfer</td>
+									</tr>
+									<tr>
+										<td>30$/month</td>
+										<td>5 CPU Core</td>
+										<td>4 GB</td>
+										<td>100 GB Storage</td>
+										<td>200GB Transfer</td>
+									</tr>
+								</table>
+						</div>
 					</div>
 					<div class="block-storage info-info">
 						<h5>Intuitive experience.</h5>
@@ -391,57 +515,31 @@
 		</div>
 	</div>
 </section>
+<div class="container-fluid purple-shade">
+	<div class="row">
+		<div class="col-md-12">
+			<h2>
+				Africa's Cloud
+			</h2>
 
-
-			<div class="container ">
-		<div class="row">
-			<div class="col-md-12">
-			<div id="pricing">
-				<h3>
-					Our pricing model
-				</h3>
-				<table class="table table-stripped">
-					<tr class="thead-dark"">
-						<th></th>
-						<th>CPU CORE</th>
-						<th>MEMORY</th>
-						<th>SSD STORAGE</th>
-						<th>TRANSFER</th>
-					</tr>
-					
-					<tr>
-						<td>5$/month</td>
-						<td>1 CPU Core</td>
-						<td>1 GB</td>
-						<td>25 GB Storage</td>
-						<td>40GB Transfer</td>
-					</tr>
-					<tr>
-						<td>10$/month</td>
-						<td>2 CPU Core</td>
-						<td>2 GB</td>
-						<td>50 GB Storage</td>
-						<td>80GB Transfer</td>
-					</tr>
-					<tr>
-						<td>20$/month</td>
-						<td>4 CPU Core</td>
-						<td>3 GB</td>
-						<td>75 GB Storage</td>
-						<td>120GB Transfer</td>
-					</tr>
-					<tr>
-						<td>30$/month</td>
-						<td>5 CPU Core</td>
-						<td>4 GB</td>
-						<td>100 GB Storage</td>
-						<td>200GB Transfer</td>
-					</tr>
-				</table>
+			<p>
+				Ever wondered how a virtual machine can be acquired. Duara compute takes care of the overhead for you thus alowing you to simply create, manage and deploy your personal virtual server with so much ease.
+			</p>
+			<div class="buttons">
+				 <button>
+                	Getting started
+                </button>
+                <button>
+                	Contact Us
+                </button>
 			</div>
+		
+			<div class="globe">
+				
 			</div>
 		</div>
 	</div>
+</div>
 		 <div class="container-fluid">
 		 <div class="row clients">
 		 	
@@ -556,7 +654,7 @@
 	</footer>
 	
 		<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-		
+		<script src="static/jquery.validate.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.3/owl.carousel.min.js"></script>
 
 	<script type="text/javascript" src="static/scripts.js"></script>
