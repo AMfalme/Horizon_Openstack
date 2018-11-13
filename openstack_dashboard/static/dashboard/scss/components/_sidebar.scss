@@ -42,13 +42,14 @@
   @media (max-width: $screen-xs-max) {
     transition: all 0.3s ease 0s;
     position: fixed;
-    top: $navbar-height;
+    top: 0;
     bottom: 0;
     z-index: 3;
     left: -$sidebar-width;
     overflow-y: auto;
     overflow-x: hidden;
-
+    //added to give it some color
+    background-color: #751f72;
     &.on-screen {
       left: 0;
     }

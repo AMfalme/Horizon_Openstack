@@ -4,6 +4,7 @@
 	
 	<link rel="icon" type="image/png" sizes="16x16" href="img/logo/favicon-2.png">
 	<link rel="manifest" href="/manifest.json">
+	<meta charset="UTF-8">
 	<meta name="msapplication-TileColor" content="#ffffff">
 	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 	<meta name="theme-color" content="#ffffff">
@@ -20,7 +21,7 @@
    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css" />
 
-    <meta charset="UTF-8">
+    
     <title>Duara</title>
 	<link rel="stylesheet" type="text/css" href="static/styles.css">
 	<link rel="stylesheet" type="text/css" href="static/animate.css">
@@ -30,44 +31,53 @@
 <body>
 	
 	<div class=" menu-border">
-	<div class="container-fluid top-nav">
+	<div class="container top-nav">
 	<div class="row">
-		<div class="logo col-md-2">
+		<div class="logo col-md-2 col-sm-2">
 			<a href="home.html"><img class="logo-img" src="img/purple-theme/horizontal.svg"></a>
 			
 		</div>
-		<nav class="col-md-10 navbar  collapse navbar-collapse navigation">
-			<ul class="right ">
-				
-				
-				<li>
+			<div class="menu-trigger">
+				<ul>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+		<nav class="col-md-10 col-sm-10 navbar navbar-expand-lg navigation">
 
-					<a class="nav_scroll" href="#home">
+			<ul class="right navbar-nav">
+				
+				
+				<li class="nav-item">
+
+					<a class="nav_scroll nav-link" href="#home">
 						home
 					</a>
 				</li>
-				<li>
+				<li class="nav-item">
 					
-					<a class="nav_scroll" href="#products"> 
+					<a class="nav_scroll nav-link" href="#products"> 
 						Products
 					</a>
 						
 					
 
 				</li>
-				<li>
-					<a class="nav_scroll" href="#pricing">
+				<li class="nav-item">
+					<a class="nav_scroll nav-link" href="#pricing">
 						Pricing
 					</a>
 				</li>
-				<li>
-					<a class="nav_scroll" href="#contact">
+				<li class="nav-item">
+					<a class="nav_scroll nav-link" href="#contact">
 						Contact us
 					</a>
 				</li>
 		
 			<div class="form-triggers">
-				<div class="right-nav">
+			
+		<div class="right-nav">
 					<li id="#">
 						<a href="#">Login</a>
 					</li>
@@ -87,7 +97,7 @@
 </div>
 		
 				
-				<div class="right-forms ">
+				<div class="right-forms container">
 					
 			<div class="identity-forms ">
 				<div class="transform">
@@ -108,13 +118,13 @@
 		                <input class="btn btn submit" type="submit" value="Create Account">
 
 					</form>
-					<!-- <div class="alternative">
+					<div class="alternative">
 					<ul>
-						<a href="signup.html"><li>Have an account?</li></a>
+						<a href="signup.html"><li>Already have an account?</li></a>
 						<a href="#"><li>Forgot Password?</li></a>
 						<a href="#"><li>Forgot Username?</li></a>
 					</ul>
-				</div> -->
+				</div>
 				</div>
 				</div>
 			</div>
@@ -122,7 +132,7 @@
 			
 	
 	<section id="home">
-	<div class="container-fluid ">
+	<div class="container ">
 		<div class="row">
 			<div class="landing-section  purple-theme">
 				<div class="col-md-6">
@@ -134,13 +144,7 @@
 
 					</h2>
 					
-					<!-- <div class="services">
-                            <div class="">
-                                <p class="pitch">Making cloud Simple
-								 </p>
-                            </div>
-                            
-                    </div> -->
+					
                    
                     <p class="easy-deploy">
                     	
@@ -153,12 +157,12 @@
                             </div>
                             <div class="buttons">
 
-	                            <button>
-	                            	Getting started
-	                            </button>
-	                            <button>
+	                            <a href="#" class="signup-button">
+	                            	Get started
+	                            </a>
+	                            <a class="nav_scroll" href="#contact">
 	                            	Contact Us
-	                            </button>
+	                            </a>
                         </div>
 				</div>
 				
@@ -174,80 +178,105 @@
 	</div>
 	</section>
 	<section id="features">
-		<div class="container">
+		<h1>Why choose Duara Compute</h1>
+		<h3 class="pitch-spin">Spin up your compute instances in three simple steps</h3>
+	<div class="" style="margin: 30px auto;">
+		<div class=" simple">
+			<div class="simplicity wow fadeIn" data-wow-duration="2s"  data-wow-delay=".4s">
+				<img src="img/signup.png" class=""><h4>Sign up</h4>
+				<!-- <p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+				</p> -->
+			</div>
+			<div class="border-delay  wow fadeIn" data-wow-duration="2s" data-wow-delay=".6s">
+				
+			</div>
+
+			<div class="simplicity wow fadeIn" data-wow-duration="2s" data-wow-delay=".8s">
+				<img src="img/configure.jpg" class=""><h4>configure</h4>
+				<!-- <p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+				</p> -->
+			</div>
+			<div class="border-delay  wow fadeIn" data-wow-duration="2s" data-wow-delay="1.2s">
+				
+			</div>
+			<div class="simplicity wow fadeIn" data-wow-duration="2s" data-wow-delay="1.6s">
+				<img src="img/launch.jpg" class=""><h4>Launch</h4>
+				<!-- <p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+				</p> -->
+			</div>
+
+		</div>
+	</div>
+
+		<div class="container" style="margin: 10px auto;">
 			<div class="row">
 				<div class="col-md-12">
-				<h1>Why choose Duara Compute</h1>
-				<p>	
-					Development and deployment of applications has never been made any easier. No overhead, no sweat. Just a click of your mouse and a few configurations and you are good to go!
-				</p>
+				
+				
 			</div>
 			</div>
 		</div>
-	<div class="container animated  fadeIn rise">
-		<div class="row">
+	<div class="container">
+		<div class="row reduce">
 			
-			<div class="col-md-3">
+			<div class="col-md-6">
 					<div class="	clompute ">
 						<i class="fas fa-bolt"></i>
 				<h2 >
 					Fast. 
 				</h2>
 				
-				<ul>
-					<li> Dedicated Virtual Servers</li>
-					<li>Hosting Management</li>
-					<li>Zero downtime <em>100% uptime </em></li>
-				</ul>
+				<p>
+						
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, urna eu pellentesque pretium.
+					</p>
 				
 				</div>
 			</div>
-			<div class="col-md-3">
+			<div class="col-md-6">
 				<div class="	clompute separator">
-					<i class="fab fa-simplybuilt"></i>
+					<img src="img/fast.svg">
 				<h2 >
 					Simple. 
 				</h2>
 				
-				<ul>
-					<li> Dedicated Virtual Servers</li>
-					<li>Hosting Management</li>
-					<li>Zero downtime <em>100% uptime </em></li>
-				</ul>
+				<p>
+						
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, urna eu pellentesque pretium.
+					</p>
 				
 				</div>
 			</div>
-			<div class="col-md-3">
-				<div class="	clompute separator">
+			<div class="col-md-6">
+				<div class="	clompute ">
 					<i class="fas fa-balance-scale"></i>
 				<h2 >
 					Reliable. 
 				</h2>
 				
-				<ul>
-					<li> Dedicated Virtual Servers</li>
-					<li>Hosting Management</li>
-					<li>Zero downtime <em>100% uptime </em></li>
-				</ul>
+				<p>
+						
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, urna eu pellentesque pretium.
+					</p>
 				
 				</div>
 			</div>
-		
-	<!-- <div class="container">
-				<div class="row"> -->
+	
 			
-			<div class="col-md-3">
+			<div class="col-md-6">
 					<div class="	clompute separator">
 						<i class="fas fa-dollar-sign"></i>
 				<h2 >
-					Fast. 
+					Affordable. 
 				</h2>
 				
-				<ul>
-					<li> Dedicated Virtual Servers</li>
-					<li>Hosting Management</li>
-					<li>Zero downtime <em>100% uptime </em></li>
-				</ul>
+				<p>
+						
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, urna eu pellentesque pretium.
+					</p>
 				
 				</div>
 			</div>
@@ -255,42 +284,10 @@
 			</div>
 
 	</div>
-
-			<!-- <div class="col-md-4">
-				<div class="	clompute">
-					<img src="img/images/feather.png">
-				<h2 >
-					Simple. 
-				</h2>
-				
-				<ul>
-					<li> Dedicated Virtual Servers</li>
-					<li>Hosting Management</li>
-					<li>Zero downtime <em>100% uptime </em></li>
-				</ul>
-				
-				</div>
-			</div>
-			<div class="col-md-4 center">
-				<div class="	clompute">
-					<img src="img/images/reliable.png">
-				<h2 >
-					Reliable. 
-				</h2>
-				
-				<ul>
-					<li> Dedicated Virtual Servers</li>
-					<li>Hosting Management</li>
-					<li>Zero downtime <em>100% uptime </em></li>
-				</ul>
-				
-				</div>
-			</div>
-		</div>
-	</div> -->
+	
 </section>
 
-	<section id="products" class="bck-shade">
+	<section id="products" class="bck-shade" >
 		<div>
 			
 		</div>
@@ -301,7 +298,7 @@
 	<div class="container">
 		<div class="row">
 			<h2 class="heading">Our Products</h2>
-			<div class="section-bg col-md-4">
+			<div class="section-bg col-md-4"  >
 				<div>
 				<header>
 					<h3>
@@ -317,7 +314,7 @@
 				</article>
 				</div>
 			</div>
-			<div class="section-bg col-md-4"><div>
+			<div class="section-bg col-md-4 "><div>
 				<header>
 					<h3>
 						Block Storage
@@ -332,7 +329,7 @@
 				</article>
 				</div>
 			</div>
-			<div class="section-bg col-md-4">
+			<div class="section-bg col-md-4 " >
 <div>
 				<header>
 					<h3>
@@ -364,7 +361,7 @@
 				
 				</div>
 			</div>
-			<div class=" section-bg col-md-4 ">
+			<div class=" section-bg col-md-4">
 <div>
 				<header>
 					<h3>
@@ -396,9 +393,7 @@
 				</h3>
 		
 			</div>
-			<div class="col-md-12">
-				
-			</div>
+			
 		</div>
 	</div>
 		<div class="container">
@@ -421,25 +416,14 @@
 					</div>	
 					
 						
-					<div class="info" id="Reliabile-uptime">
+					<div class="info" id="Reliable-uptime">
 					
 						<h6>Block storage</h6>
 						
 						
 						
 					</div>	
-					<div class="info" id="block-storage">
-						
-						<h6>Private Network</h6>
-						
-						
-					</div>
-					<div class="info" id="block-storage">
-						
-						<h6>Firewall As a Service</h6>
-						
-						
-					</div>
+					
 					<div class="info" id="block-storage">
 						
 						<h6>Floating IPs</h6>
@@ -452,12 +436,12 @@
 				<div class="target-info">
 					<div class="cloudcompute info-active">
 						<div class="pricing-table">
-								<table class="table table-stripped">
-									<tr class="thead-dark"">
+								<table class="table table-striped">
+									<tr class="thead-dark">
 										<th></th>
 										<th>CPU CORE</th>
 										<th>MEMORY</th>
-										<th>SSD STORAGE</th>
+										<th>BLOCK STORAGE</th>
 										<th>TRANSFER</th>
 									</tr>
 									
@@ -498,7 +482,7 @@
 							Manage your Virtual Machine on the fly. Enjoy our next Level UX that allows you to concurrently run your tasks without much fuss.
 						</p>
 					</div>
-					<div class="Reliabile-uptime">
+					<div class="Reliable-uptime">
 						<h5>highly scalable </h5>
 						<p>
 							Easily scale up and quickly to accomodate more users and more tasks. We grow together, We progress with each other.
@@ -525,13 +509,16 @@
 			<p>
 				Ever wondered how a virtual machine can be acquired. Duara compute takes care of the overhead for you thus alowing you to simply create, manage and deploy your personal virtual server with so much ease.
 			</p>
-			<div class="buttons">
-				 <button>
-                	Getting started
-                </button>
-                <button>
-                	Contact Us
-                </button>
+			<div class="">
+				<div class="buttons">
+
+	                            <a href="#" class="signup-button">
+	                            	Get started
+	                            </a>
+	                            <a class="nav_scroll" href="#contact">
+	                            	Contact Us
+	                            </a>
+                        </div>
 			</div>
 		
 			<div class="globe">
@@ -540,101 +527,19 @@
 		</div>
 	</div>
 </div>
-		 <div class="container-fluid">
-		 <div class="row clients">
-		 	
-		 <!-- 	<div class="col-md-4">
-		 		<div class="client">
-		 			<div class="	clompute">
-				<h2 >
-					Cloud Computing. 
-				</h2>
-				
-				<ul>
-					<li> Dedicated Virtual Servers</li>
-					<li>Hosting Management</li>
-					<li>Zero downtime <em>100% uptime </em></li>
-				</ul>
-				<img src="img/logo/icon.svg">
-				</div>
-		 		</div>
-		 	</div> -->
-		 	<div class="col-md-12">
-		 		<div class="code-sample">
-		 			<h3>
-		 		Companies We Work With
-		 	</h3>
-		 	<div class="owl-carousel">
-		 	<div>
-		 		<img src="img/images/at.png">
-		 	</div>
-		 	<div>
-		 		<img src="img/images/at.png">
-		 	</div>
-		 	</div>
-		 		</div>
-		 	</div>
-		 </div>
-	</div>
-		<!-- <div class="container shade ">
-				<div class="row">
-					<div class="col-md-12">
-						<form class="subscribe-form">
-							<div class="form-group">
-								<input class="form-control" type="text" name="" placeholder="Your Email address">
-							</div>
-						<button class="subscribe">
-							Subscribe to our Newsletter
-						</button>
-						</form>
-					</div>
-				</div>
-			</div> -->
-
-		<footer class="container-fluid">
-		<div class="row">
-				<div class="col-md-3 logo">
-				<img src="img/purple-theme/vertical.svg">
-
-				<div class="copyright">
-					<p>Copyright <img src="img/images/copyright.png"></p>
-				</div>
-				
-			
-			</div>
-			<div class="col-md-3 descr">
-				<h4>Company</h4>
-					<ul class="quick">
-					<a href="home.html"><li>
-						Homepage
-					</li></a>
-					<a href="pricing.html">
-						<li>
-							pricing
-						</li>
-					</a>
-					<a href="#">
-						<li>
-							Products
-						</li>
-					</a>
-					<a href="#">
-						<li>
-							Virtual Machines
-						</li>
-					</a>
-				</ul>
-			</div>
-			<div class="col-md-3 descr">
-				
-				<h5>Focusing on Africa</h5>
-						<img class="globe" src="img/images/globe.png">
-			</div>
-			
-			<div class="col-md-3 descr">
-				<ul class="channels">
+	<section id="contact" class="">
+		<h1 class="contact-header">
+			Contact us
+		</h1>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 ">
+					<h1>
+						WE APPRECIATE FEEDBACK
+					</h1>
+					<ul class="channels">
 					<li >
-						<h4>CONTACT US</h4>
+						
 						<P>
 							Galana Plaza, 7th Floor<br>
 							Galana Road, Nairobi<br>
@@ -649,15 +554,134 @@
 						<img src="img/images/linkedin.jpg">
 					</li>
 				</ul>
+					<div class="right-line">
+						
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="contact">
+						<form>
+						  <div class="form-row">
+						    <div class="form-group">
+								<div class="col-md-6">
+									
+								  <input type="text" class="form-control" placeholder="Name">
+								</div>
+								
+								
+						    <div class=" col-md-6">
+						      
+						      <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+						    </div>
+						    
+						    </div>
+						    <div class="form-group col-md-12">
+							   
+							    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Your Message"></textarea>
+							    <button type="submit" class="submit-btn btn ">Submit</button>
+							  </div>
+
+						  </div>
+						</form>
+					</div>
+				</div>
+				
 			</div>
+		</div>
+	</section>
+	
+
+		<footer class="container-fluid">
+		<div class="row">
+				<div class="col-md-12">
+					<img class="" src="img/purple-theme/transparent.png">
+					<br>
+					Duara Systems
+					<i class="far fa-copyright"></i>
+				</div>
+				
 		</div>
 	</footer>
 	
 		<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 		<script src="static/jquery.validate.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.3/owl.carousel.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script><script>new WOW().init();</script>
 
 	<script type="text/javascript" src="static/scripts.js"></script>
+	<script> 
+		function afterReveal( el ) 
+		{
+		el.addEventListener('animationend', function( event ) 
+		 	{
+		 		 $('.wow').each(function(){ $(this).css('opacity',1); }); 
+		 	}
+		 	); 
+		} new WOW({ callback: afterReveal }).init() 
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.1/typed.min.js"></script>
+
+	<script type="text/javascript">
+		$(function() {
+  var data = [
+  { 
+    action: 'type',
+    strings: ["ssh me@my-ip^400"],
+    output: '<span class="gray"> Logged in to my-ip. </span><br>&nbsp;',
+    postDelay: 1000
+  },
+  { 
+    action: 'type',
+    strings: ["cd home/", ''],
+    postDelay: 2000
+  }
+  
+];
+  runScripts(data, 0);
+});
+
+function runScripts(data, pos) {
+    var prompt = $('.prompt'),
+        script = data[pos];
+    if(script.clear === true) {
+      $('.history').html(''); 
+    }
+    switch(script.action) {
+        case 'type':
+          // cleanup for next execution
+          prompt.removeData();
+          $('.typed-cursor').text('');
+          prompt.typed({
+            strings: script.strings,
+            typeSpeed: 30,
+            callback: function() {
+              var history = $('.history').html();
+              history = history ? [history] : [];
+              history.push('$ ' + prompt.text());
+              if(script.output) {
+                history.push(script.output);
+                prompt.html('');
+                $('.history').html(history.join('<br>'));
+              }
+              // scroll to bottom of screen
+              $('section.terminal').scrollTop($('section.terminal').height());
+              // Run next script
+              pos++;
+              if(pos < data.length) {
+                setTimeout(function() {
+                  runScripts(data, pos);
+                }, script.postDelay || 1000);
+              }
+            }
+          });
+          break;
+        case 'view':
+
+          break;
+    }
+}
+
+	</script>
 	
 </body>
 </html>

@@ -3,3 +3,11 @@
   color: $gray-light;
   font-size: $font-size-small;
 }
+.navbar-inverse .navbar-nav > li > a{
+  color: #751f72;
+}
+.navbar-brand svg{
+  height: 98px !important;
+  width: 215px;
+  margin: -23px !important;
+}

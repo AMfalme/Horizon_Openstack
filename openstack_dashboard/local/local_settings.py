@@ -13,7 +13,7 @@ DEBUG = True
 # This setting controls whether or not compression is enabled. Disabling
 # compression makes Horizon considerably slower, but makes it much easier
 # to debug JS and CSS changes
-#COMPRESS_ENABLED = not DEBUG
+COMPRESS_ENABLED = not DEBUG
 
 # This setting controls whether compression happens on the fly, or offline
 # with `python manage.py compress`
@@ -184,7 +184,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 #    ('http://cluster2.example.com:5000/v3', 'cluster2'),
 #]
 
-OPENSTACK_HOST = "102.164.56.46"
+OPENSTACK_HOST = "10.126.206.122"
 OPENSTACK_KEYSTONE_URL = "http://%s:5000/v3" % OPENSTACK_HOST
 OPENSTACK_KEYSTONE_DEFAULT_ROLE = "_member_"
 

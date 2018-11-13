@@ -13,10 +13,10 @@
   width: $sidebar-width;
   z-index: 3;
   margin-left: 0;
-  overflow-x: scroll;
+ // overflow-x: scroll;
 
   .sidebar-wrapper {
-    background: $body-bg;
+    background: #fff;
     height: 100%;
   }
 
@@ -46,7 +46,7 @@
   .openstack-dashboard > a,
   .openstack-panel > a,
   .nav-header > a {
-    color: $list-group-link-heading-color;
+    color: #751f72;
   }
 
   .openstack-panel > a {

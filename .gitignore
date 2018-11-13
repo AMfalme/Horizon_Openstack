@@ -46,3 +46,4 @@ ChangeLog
 tags
 ghostdriver.log
 .idea
+.vscode*

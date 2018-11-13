@@ -51,7 +51,7 @@ DEBUG = False
 DIAM_URL = 'http://127.0.0.1:8080/'
 DIAM_USER_URL = DIAM_URL + 'user'
 
-SITE_BRANDING = 'OpenStack Dashboard'
+SITE_BRANDING = 'Duara Dashboard'
 
 WEBROOT = '/'
 LOGIN_URL = None
