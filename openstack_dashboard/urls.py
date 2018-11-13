@@ -52,6 +52,9 @@ horizon.base._decorate_urlconf([ngdetails_url], require_auth)
 for u in getattr(settings, 'AUTHENTICATION_URLS', ['openstack_auth.urls']):
     urlpatterns.append(url(r'^auth/', include(u)))
 
+register_url = url(r'^accounts/', include('openstack_registration.urls'))
+urlpatterns.append(register_url)
+
 # Development static app and project media serving using the staticfiles app.
 urlpatterns += staticfiles_urlpatterns()
 

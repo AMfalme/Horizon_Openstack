@@ -24,6 +24,8 @@ from django.views.decorators.debug import sensitive_variables
 from openstack_auth import exceptions
 from openstack_auth import utils
 
+import requests
+import json
 
 LOG = logging.getLogger(__name__)
 
@@ -49,37 +51,15 @@ class Login(django_auth_forms.AuthenticationForm):
     """
     use_required_attribute = False
     region = forms.ChoiceField(label=_("Region"), required=False)
-    username = forms.CharField(
-        label=_("User Name"),
-        widget=forms.TextInput(attrs={"autofocus": "autofocus"}))
+    email = forms.EmailField(label=('Email Address'), required=True,
+        widget=forms.EmailInput(attrs={"autofocus": "autofocus"}))
     password = forms.CharField(label=_("Password"),
                                widget=forms.PasswordInput(render_value=False))
 
     def __init__(self, *args, **kwargs):
         super(Login, self).__init__(*args, **kwargs)
-        fields_ordering = ['username', 'password', 'region']
-        if getattr(settings,
-                   'OPENSTACK_KEYSTONE_MULTIDOMAIN_SUPPORT',
-                   False):
-            last_domain = self.request.COOKIES.get('login_domain', None)
-            if getattr(settings,
-                       'OPENSTACK_KEYSTONE_DOMAIN_DROPDOWN',
-                       False):
-                self.fields['domain'] = forms.ChoiceField(
-                    label=_("Domain"),
-                    initial=last_domain,
-                    required=True,
-                    choices=getattr(settings,
-                                    'OPENSTACK_KEYSTONE_DOMAIN_CHOICES',
-                                    ()))
-            else:
-                self.fields['domain'] = forms.CharField(
-                    initial=last_domain,
-                    label=_("Domain"),
-                    required=True,
-                    widget=forms.TextInput(attrs={"autofocus": "autofocus"}))
-            self.fields['username'].widget = forms.widgets.TextInput()
-            fields_ordering = ['domain', 'username', 'password', 'region']
+        fields_ordering = ['email', 'password', 'region']
+
         self.fields['region'].choices = self.get_region_choices()
         if len(self.fields['region'].choices) == 1:
             self.fields['region'].initial = self.fields['region'].choices[0][0]
@@ -88,23 +68,6 @@ class Login(django_auth_forms.AuthenticationForm):
             self.fields['region'].initial = self.request.COOKIES.get(
                 'login_region')
 
-        # if websso is enabled and keystone version supported
-        # prepend the websso_choices select input to the form
-        if utils.is_websso_enabled():
-            initial = getattr(settings, 'WEBSSO_INITIAL_CHOICE', 'credentials')
-            self.fields['auth_type'] = forms.ChoiceField(
-                label=_("Authenticate using"),
-                choices=getattr(settings, 'WEBSSO_CHOICES', ()),
-                required=False,
-                initial=initial)
-            # add auth_type to the top of the list
-            fields_ordering.insert(0, 'auth_type')
-
-        # websso is enabled, but keystone version is not supported
-        elif getattr(settings, 'WEBSSO_ENABLED', False):
-            msg = ("Websso is enabled but horizon is not configured to work " +
-                   "with keystone version 3 or above.")
-            LOG.warning(msg)
         self.fields = collections.OrderedDict(
             (key, self.fields[key]) for key in fields_ordering)
 
@@ -121,29 +84,36 @@ class Login(django_auth_forms.AuthenticationForm):
         default_domain = getattr(settings,
                                  'OPENSTACK_KEYSTONE_DEFAULT_DOMAIN',
                                  'Default')
-        username = self.cleaned_data.get('username')
+        email = self.cleaned_data.get('email')
         password = self.cleaned_data.get('password')
         region = self.cleaned_data.get('region')
-        domain = self.cleaned_data.get('domain', default_domain)
 
-        if not (username and password):
-            # Don't authenticate, just let the other validators handle it.
+        payload = {'emailAddress': email}
+        headers = {'Content-type': 'application/json'}
+        response = requests.get(settings.DIAM_USER_URL, params=payload, headers=headers)
+
+        if response.status_code == 404:
+            self.add_error(None, "User does not exist. Please sign up.")
+            return self.cleaned_data
+        elif response.status_code != 200:
+            self.add_error(None, "There was a problem logging in. Please try again")
             return self.cleaned_data
 
+        domain = str(response.json().get('domainName'))
         try:
             self.user_cache = authenticate(request=self.request,
-                                           username=username,
+                                           username=email,
                                            password=password,
                                            user_domain_name=domain,
                                            auth_url=region)
             LOG.info('Login successful for user "%(username)s" using domain '
                      '"%(domain)s", remote address %(remote_ip)s.',
-                     {'username': username, 'domain': domain,
+                     {'username': email, 'domain': domain,
                       'remote_ip': utils.get_client_ip(self.request)})
         except exceptions.KeystoneAuthException as exc:
             LOG.info('Login failed for user "%(username)s" using domain '
                      '"%(domain)s", remote address %(remote_ip)s.',
-                     {'username': username, 'domain': domain,
+                     {'username': email, 'domain': domain,
                       'remote_ip': utils.get_client_ip(self.request)})
             raise forms.ValidationError(exc)
         if hasattr(self, 'check_for_test_cookie'):  # Dropped in django 1.7

@@ -1,0 +1,26 @@
+{% extends 'registration/_signup_form.html' %}
+{% load i18n %}
+
+{% block pre_signup %}
+  <div class="container login">
+    <div class="row">
+      <div class="col-xs-11 col-sm-8 col-md-6 col-lg-5 horizontal-center">
+        {{ block.super }}
+{% endblock %}
+
+{% block signup_header %}
+  {% include 'auth/_splash.html' %}
+  {{ block.super }}
+{% endblock %}
+
+{% block signup_footer %}
+  {{ block.super }}
+  {% include '_signup_form_footer.html' %}
+{% endblock %}
+
+{% block post_signup %}
+      {{ block.super }}
+      </div>
+    </div>
+  </div>
+{% endblock %}

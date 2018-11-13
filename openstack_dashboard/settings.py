@@ -47,6 +47,10 @@ if ROOT_PATH not in sys.path:
 
 DEBUG = False
 
+# Duara Identity Accesss Management
+DIAM_URL = 'http://127.0.0.1:8080/'
+DIAM_USER_URL = DIAM_URL + 'user'
+
 SITE_BRANDING = 'OpenStack Dashboard'
 
 WEBROOT = '/'
@@ -187,6 +191,7 @@ INSTALLED_APPS = [
     'compressor',
     'horizon',
     'openstack_auth',
+    'openstack_registration',
 ]
 
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'

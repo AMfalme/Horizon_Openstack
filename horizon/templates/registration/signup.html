@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Signup" %}{% endblock %}
+
+{% block body_id %}splash{% endblock %}
+
+{% block content %}
+  {% include 'registration/_signup.html' %}
+{% endblock %}
+
+{% comment %}
+{% block footer %}
+  {% include '_login_footer.html' %}
+{% endblock %}
+{% endcomment %}
+

@@ -1,0 +1,51 @@
+{% load i18n %}
+
+{% block pre_signup %}
+<form id="" class="ng-pristine ng-valid ng-scope"
+      method="POST"
+      action="{% url 'signup' %}"
+      autocomplete="off">
+  {% csrf_token %}
+{% endblock %}
+
+  <div class="panel panel-default">
+
+    <div class="panel-heading">
+    {% block signup_header %}
+      <h3 class="signup-title">
+        Sign Up
+      </h3>
+    {% endblock %}
+    </div>
+
+    <div class="panel-body">
+    {% block signup_body %}
+      {% comment %}
+        These fake fields are required to prevent Chrome v34+ from autofilling form.
+      {% endcomment %}
+      {% if HORIZON_CONFIG.password_autocomplete != "on" %}
+        <div class="fake_credentials" style="display: none">
+          <input type="text" name="fake_email" value="" />
+          <input type="password" name="fake_password" value="" />
+        </div>
+      {%endif%}
+      {% include "auth/_description.html" %}
+      <fieldset hz-login-finder>
+        {% include "horizon/common/_form_fields.html" %}
+      </fieldset>
+    {% endblock %}
+    </div>
+
+    <div class="panel-footer">
+      {% block signup_footer %}
+        <button id="signupBtn" type="submit" class="btn btn-primary pull-right">
+          Sign Up
+        </button>
+        <div class="clearfix"></div>
+      {% endblock %}
+    </div>
+  </div>
+
+{% block post_signup%}
+</form>
+{% endblock %}
