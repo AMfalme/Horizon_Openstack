@@ -30,7 +30,7 @@ pipeline {
     }
     stage('Publish Image') {
       when {
-          branch 'master'
+          branch 'queens'
       }
       steps {
         script {
@@ -46,7 +46,7 @@ pipeline {
     }
     stage('Deploy Staging') {
         when {
-            branch 'master'
+            branch 'queens'
         }
         environment {
             ENV_FILE = "~/.env/ddash.staging.env"
