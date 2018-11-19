@@ -8,18 +8,21 @@ from horizon.utils import secret_key
 
 from openstack_dashboard.settings import HORIZON_CONFIG
 
-DEBUG = True
+DEBUG = False
+
+# Duara Identity Accesss Management
+DIAM_USER_URL = os.environ.get('DIAM_USER_URL')
 
 # This setting controls whether or not compression is enabled. Disabling
 # compression makes Horizon considerably slower, but makes it much easier
 # to debug JS and CSS changes
-COMPRESS_ENABLED = not DEBUG
+#COMPRESS_ENABLED = True
 
 # This setting controls whether compression happens on the fly, or offline
 # with `python manage.py compress`
 # See https://django-compressor.readthedocs.io/en/latest/usage/#offline-compression
 # for more information
-#COMPRESS_OFFLINE = not DEBUG
+COMPRESS_OFFLINE = True
 
 # WEBROOT is the location relative to Webserver root
 # should end with a slash.
@@ -37,19 +40,19 @@ WEBROOT = '/'
 # with the list of host/domain names that the application can serve.
 # For more information see:
 # https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
-#ALLOWED_HOSTS = ['horizon.example.com', ]
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'ddash.staging.duara.io.10.0.0.2.xip.io', 'ddash.duara.io.10.0.0.2.xip.io']
 
 # Set SSL proxy settings:
 # Pass this header from the proxy after terminating the SSL,
 # and don't forget to strip it from the client's request.
 # For more information see:
 # https://docs.djangoproject.com/en/dev/ref/settings/#secure-proxy-ssl-header
-#SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # If Horizon is being served through SSL, then uncomment the following two
 # settings to better secure the cookies from security exploits
-#CSRF_COOKIE_SECURE = True
-#SESSION_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True
+# SESSION_COOKIE_SECURE = True
 
 # The absolute path to the directory where message files are collected.
 # The message file must have a .json file extension. When the user logins to
@@ -112,7 +115,8 @@ OPENSTACK_KEYSTONE_MULTIDOMAIN_SUPPORT = True
 # Toggle showing the openrc file for Keystone V2.
 # If set to false the link will be removed from the user dropdown menu
 # and the API Access page
-#SHOW_KEYSTONE_V2_RC = True
+SHOW_KEYSTONE_V2_RC = False
+SHOW_KEYSTONE_V3_RC = False
 
 # If provided, a "Report Bug" link will be displayed in the site header
 # which links to the value of this setting (ideally a URL containing
@@ -154,17 +158,24 @@ SECRET_KEY = secret_key.generate_or_read_from_file(
 # We recommend you use memcached for development; otherwise after every reload
 # of the django development server, you will have to login again. To use
 # memcached set CACHES to something like
-#CACHES = {
-#    'default': {
-#        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
-#        'LOCATION': '127.0.0.1:11211',
-#    },
-#}
-
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
     },
+}
+
+SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
+DATABASES = {
+    'default': {
+        # Database configuration here
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': os.environ.get('DB_NAME'),
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASSWORD'),
+        'HOST': os.environ.get('DB_HOST'),
+        'PORT': os.environ.get('DB_PORT'),
+        'default-character-set': 'utf8',
+    }
 }
 
 # Send email to the console by default
@@ -184,7 +195,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 #    ('http://cluster2.example.com:5000/v3', 'cluster2'),
 #]
 
-OPENSTACK_HOST = "10.126.206.122"
+OPENSTACK_HOST = os.environ.get("OPENSTACK_HOST")
 OPENSTACK_KEYSTONE_URL = "http://%s:5000/v3" % OPENSTACK_HOST
 OPENSTACK_KEYSTONE_DEFAULT_ROLE = "_member_"
 

@@ -47,10 +47,6 @@ if ROOT_PATH not in sys.path:
 
 DEBUG = False
 
-# Duara Identity Accesss Management
-DIAM_URL = 'http://127.0.0.1:8080/'
-DIAM_USER_URL = DIAM_URL + 'user'
-
 SITE_BRANDING = 'Duara Dashboard'
 
 WEBROOT = '/'
