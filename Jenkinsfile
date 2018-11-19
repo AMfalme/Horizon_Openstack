@@ -29,6 +29,9 @@ pipeline {
       }
     }
     stage('Publish Image') {
+      when {
+          branch 'master'
+      }
       steps {
         script {
           withCredentials([[$class: 'FileBinding', credentialsId: "gcr-jenkins-ci-secret", variable: 'GCR_KEY_FILE']]) {
@@ -42,6 +45,9 @@ pipeline {
       }
     }
     stage('Deploy Staging') {
+        when {
+            branch 'master'
+        }
         environment {
             ENV_FILE = "~/.env/ddash.staging.env"
             STAGE = "staging"
