@@ -8,7 +8,15 @@ from horizon.utils import secret_key
 
 from openstack_dashboard.settings import HORIZON_CONFIG
 
-DEBUG = False
+# Load .env file for development environment
+STAGE = os.environ.get('STAGE')
+if STAGE is None or (STAGE != 'staging' and  os.environ.get('STAGE') != 'prod'):
+    from dotenv import load_dotenv
+    load_dotenv()
+
+    DEBUG = True
+else:
+    DEBUG = False
 
 # Duara Identity Accesss Management
 DIAM_USER_URL = os.environ.get('DIAM_USER_URL')
