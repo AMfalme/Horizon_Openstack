@@ -164,11 +164,12 @@ SECRET_KEY = secret_key.generate_or_read_from_file(
 # memcached set CACHES to something like
 CACHES = {
     'default': {
-        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': os.environ.get('MEMCACHED')
     },
 }
 
-SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
+SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
 DATABASES = {
     'default': {
         # Database configuration here
