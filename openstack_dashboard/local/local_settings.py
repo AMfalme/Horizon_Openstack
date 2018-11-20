@@ -14,9 +14,11 @@ if STAGE is None or (STAGE != 'staging' and  os.environ.get('STAGE') != 'prod'):
     from dotenv import load_dotenv
     load_dotenv()
 
+    COMPRESS_OFFLINE = False
     DEBUG = True
 else:
     DEBUG = False
+    COMPRESS_OFFLINE = True
 
 # Duara Identity Accesss Management
 DIAM_USER_URL = os.environ.get('DIAM_USER_URL')
@@ -25,12 +27,6 @@ DIAM_USER_URL = os.environ.get('DIAM_USER_URL')
 # compression makes Horizon considerably slower, but makes it much easier
 # to debug JS and CSS changes
 #COMPRESS_ENABLED = True
-
-# This setting controls whether compression happens on the fly, or offline
-# with `python manage.py compress`
-# See https://django-compressor.readthedocs.io/en/latest/usage/#offline-compression
-# for more information
-COMPRESS_OFFLINE = True
 
 # WEBROOT is the location relative to Webserver root
 # should end with a slash.

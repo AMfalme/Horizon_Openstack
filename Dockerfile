@@ -17,7 +17,7 @@ RUN pip install uwsgi
 
 # Set up django
 RUN python3 manage.py collectstatic --no-input
-RUN python3 manage.py compress
+RUN python3 manage.py compress --force
 
 EXPOSE 80/tcp
 
