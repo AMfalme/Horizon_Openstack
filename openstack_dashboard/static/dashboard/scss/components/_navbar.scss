@@ -22,7 +22,9 @@
   .navbar {
     margin-bottom: 1px;
   }
-
+  .navbar-nav{
+    margin-left: 65px;
+  }
   .navbar-nav .header-overflow ul li{
     white-space: nowrap;
     padding: $bs-dropdown-item-padding-vertical $bs-dropdown-item-padding-horizontal;
