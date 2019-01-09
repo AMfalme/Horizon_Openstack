@@ -26,16 +26,16 @@
 #content_body {
   transition: padding-left $sidebar-animation;
   display: block;
-
-  @media (max-width: $screen-lg) {
-    padding-left: 0;
-  }
+  // remove left padding on small screen
+  // @media (max-width: $screen-lg) {
+  //   padding-left: 0;
+  // }
 }
 
 #main_content {
   display: block;
   min-width: unset;
-  width: 100%;
+ 
 }
 
 
@@ -62,6 +62,10 @@
   }
 
   &-inverse {
+    background-color: transparent;
+    width: 100%;
+    z-index: 1;
+    position: relative;
     .navbar-brand {
       svg {
         fill: $navbar-inverse-link-active-color;

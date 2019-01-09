@@ -75,7 +75,9 @@
     border: 0;
     box-shadow: none;
     cursor: pointer;
-
+    .openstack-spin  {
+      color: #c79ac4;
+    }
     .list-group-item {
       border-radius: 0;
       border: 0;
@@ -88,7 +90,8 @@
       background: $list-group-bg;
 
       &:hover {
-        background: $list-group-hover-bg;
+        background: rgba(239, 255, 0, 0.83);
+        color: purple;
       }
     }
   }
@@ -104,8 +107,5 @@
     text-align: center;
   }
 
-  // Right align panels
-  .openstack-panel {
-    text-align: right;
-  }
+  
 }

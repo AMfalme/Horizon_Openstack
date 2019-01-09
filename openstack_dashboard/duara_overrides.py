@@ -1,0 +1,30 @@
+from django.utils.translation import ugettext_lazy as _
+
+import horizon
+
+
+panels_to_remove = [
+	'overview',
+	'routers',
+	'networks',
+	'volumes',
+	'cgroups',
+	'cg_snapshots',
+	'network_topology',
+	'containers',
+
+	]
+settings = horizon.get_dashboard('settings')
+settings.name = _("Account")
+project = horizon.get_dashboard('project')
+project.name = _('Dashboard')
+
+
+def remove_panels_from_dashboard(list):
+	project.default_panel = "instances"
+	for panel in list:
+		x = project.get_panel(panel)
+		project.unregister(x.__class__)
+remove_panels_from_dashboard(panels_to_remove)
+
+

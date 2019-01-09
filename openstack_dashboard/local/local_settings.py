@@ -26,7 +26,8 @@ DIAM_USER_URL = os.environ.get('DIAM_USER_URL')
 # This setting controls whether or not compression is enabled. Disabling
 # compression makes Horizon considerably slower, but makes it much easier
 # to debug JS and CSS changes
-#COMPRESS_ENABLED = True
+#COMPRESS_ENABLED = False 
+
 
 # WEBROOT is the location relative to Webserver root
 # should end with a slash.
@@ -130,7 +131,7 @@ SHOW_KEYSTONE_V3_RC = False
 # Show backdrop element outside the modal, do not close the modal
 # after clicking on backdrop.
 #HORIZON_CONFIG["modal_backdrop"] = "static"
-
+HORIZON_CONFIG["customization_module"] = "openstack_dashboard.duara_overrides"
 # Specify a regular expression to validate user passwords.
 #HORIZON_CONFIG["password_validator"] = {
 #    "regex": '.*',

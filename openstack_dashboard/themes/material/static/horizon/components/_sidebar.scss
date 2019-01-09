@@ -3,8 +3,9 @@
   bottom: 0;
   display: block;
   left: 0;
-  position: fixed;
-  top: $navbar-height;
+  position: absolute;
+  // top: $navbar-height;
+  top: 0;
   /* No mixin for this yet */
   transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
@@ -13,14 +14,44 @@
   width: $sidebar-width;
   z-index: 3;
   margin-left: 0;
+  background-color: #442a43;
  // overflow-x: scroll;
 
   .sidebar-wrapper {
-    background: #fff;
+    padding-top:  90px;
+   
     height: 100%;
   }
 
   .openstack-dashboard {
+    .collapsed.dashboard-slug:after{
+      -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    }
+    .dashboard-slug:after{
+      position: absolute;
+    top: 20px;
+    font-family: "FontAwesome";
+    content: "\f107";
+    display: inline-block;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 1;
+    -moz-transition: 0.3s all ease;
+    -o-transition: 0.3s all ease;
+    -webkit-transition: 0.3s all ease;
+    transition: 0.3s all ease;
+    color: #fff;
+    margin-left: 7px;
+    -moz-transform: rotate(-180deg);
+    -ms-transform: rotate(-180deg);
+    -o-transform: rotate(-180deg);
+    -webkit-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+    }
     & > a {
       font-weight: bold;
     }
@@ -38,24 +69,40 @@
   .openstack-panel > a,
   .nav-header > a {
     &:focus {
-      background-color: $gray-lighter;
+      // background-color: $gray-lighter;
       outline: 0;
+      font-weight: bold;
+      
     }
   }
 
   .openstack-dashboard > a,
   .openstack-panel > a,
   .nav-header > a {
-    color: #751f72;
+    color: #c79ac4;
   }
 
   .openstack-panel > a {
-    padding: $padding-small-horizontal $font-size-h4 $padding-small-horizontal ($font-size-h1 - $padding-small-horizontal);
+    padding: $padding-small-horizontal $font-size-h4 $padding-small-horizontal 25px;
     text-align: left;
-
-    &.active {
-      font-weight: bold;
+    color: #fff;
+    &.active, &:hover {
+      
+      background-color: rgba(117, 70, 117, 0.83);
     }
+  }
+  .openstack-panel:hover a,
+  .openstack-panel a.active{
+    font-weight: bold;
+  }
+  #sidebar .panel-collapse {
+    margin-left: 10px;
+}
+  
+  .api_access{
+    display: none;
+    height: 0;
+    padding: 0;
   }
 
   .openstack-toggle {
@@ -65,11 +112,20 @@
   .nav-header-title {
     text-align: left;
     padding-left: $padding-small-horizontal;
+    color: #c79ac4;
+    font-weight: 500;
+    
   }
-
+  .collapsed .nav-header-title:after{
+    -moz-transform: rotate(0);
+    -ms-transform: rotate(0);
+    -o-transform: rotate(0);
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
   // Specialness for smaller screens!
   @media (max-width: $screen-lg) {
-    @include translate(-$sidebar-width, 0);
+    // @include translate(-$sidebar-width, 0);
     border: none;
 
     &.active {

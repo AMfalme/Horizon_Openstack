@@ -1238,20 +1238,29 @@ class InstancesTable(tables.DataTable):
     flavor = tables.Column(get_flavor,
                            sortable=False,
                            verbose_name=_("Flavor"))
-    keypair = tables.Column(get_keyname, verbose_name=_("Key Pair"))
+     
+    keypair = tables.Column(get_keyname, verbose_name=_("Key Pair"),
+    # add hidden = True inorder to remove key pair column
+    hidden = True)
     status = tables.Column("status",
                            filters=(title, filters.replace_underscores),
                            verbose_name=_("Status"),
                            status=True,
                            status_choices=STATUS_CHOICES,
-                           display_choices=STATUS_DISPLAY_CHOICES)
+                           display_choices=STATUS_DISPLAY_CHOICES,
+                        #    add hidden = True inorder to remove key pair column
+                           hidden = True)
     locked = tables.Column(render_locked,
                            verbose_name="",
                            sortable=False)
     az = tables.Column("availability_zone",
-                       verbose_name=_("Availability Zone"))
+                       verbose_name=_("Availability Zone"),
+                        #    add hidden = True inorder to remove availability zone column
+                        hidden = True)
     task = tables.Column("OS-EXT-STS:task_state",
                          verbose_name=_("Task"),
+                         #  add hidden = True inorder to remove Task column
+                         hidden = True,
                          empty_value=TASK_DISPLAY_NONE,
                          status=True,
                          status_choices=TASK_STATUS_CHOICES,
@@ -1262,6 +1271,8 @@ class InstancesTable(tables.DataTable):
                           display_choices=POWER_DISPLAY_CHOICES)
     created = tables.Column("created",
                             verbose_name=_("Time since created"),
+                            # add hidden = True inorder to remove Time Since created column
+                            hidden = True,
                             filters=(filters.parse_isotime,
                                      filters.timesince_sortable),
                             attrs={'data-type': 'timesince'})

@@ -4,10 +4,17 @@
   font-size: $font-size-small;
 }
 .navbar-inverse .navbar-nav > li > a{
-  color: #fff;
+  color: #751f72;
+  font-size:14px;
+}
+.navbar-inverse .navbar-nav > li > a:hover{
+  color: #751f72 !important;
+}
+.navbar-inverse .navbar-nav > li.user-menu.open > a:hover{
+  color: #fff !important;
 }
 .navbar-brand svg{
   height: 98px !important;
-  width: 150px;
-  margin: -15px !important;
+  width: 100px;
+  margin: 5px !important;
 }
