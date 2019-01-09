@@ -3,7 +3,7 @@
   bottom: 0;
   display: block;
   left: 0;
-  position: absolute;
+  position: fixed;
   // top: $navbar-height;
   top: 0;
   /* No mixin for this yet */
@@ -15,7 +15,8 @@
   z-index: 3;
   margin-left: 0;
   background-color: #442a43;
- // overflow-x: scroll;
+  overflow-y: auto;
+
 
   .sidebar-wrapper {
     padding-top:  90px;
