@@ -1247,7 +1247,8 @@ class InstancesTable(tables.DataTable):
                            verbose_name=_("Status"),
                            status=True,
                            status_choices=STATUS_CHOICES,
-                           display_choices=STATUS_DISPLAY_CHOICES)
+                           display_choices=STATUS_DISPLAY_CHOICES
+                            )
     locked = tables.Column(render_locked,
                            verbose_name="",
                            sortable=False)

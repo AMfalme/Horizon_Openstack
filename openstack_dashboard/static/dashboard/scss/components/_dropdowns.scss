@@ -96,12 +96,12 @@
 // Push the table filter padding over to compensate for that little magnifying glass icon
 .table_search {
     min-width: 770px;
+    margin: 0 30px 30px 155px;
     float: left;
-    width: 100%;
-    margin: 0 auto;
+    width: 80%;
   input[type="text"] {
     
-    width: 85%;
+    width: 90%;
   }
 }
 
