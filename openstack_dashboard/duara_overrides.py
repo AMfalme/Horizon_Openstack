@@ -7,7 +7,6 @@ panels_to_remove = [
 	'overview',
 	'routers',
 	'networks',
-	'volumes',
 	'cgroups',
 	'cg_snapshots',
 	'network_topology',

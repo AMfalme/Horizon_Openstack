@@ -1248,8 +1248,7 @@ class InstancesTable(tables.DataTable):
                            status=True,
                            status_choices=STATUS_CHOICES,
                            display_choices=STATUS_DISPLAY_CHOICES,
-                        #    add hidden = True inorder to remove key pair column
-                           hidden = True)
+                            )
     locked = tables.Column(render_locked,
                            verbose_name="",
                            sortable=False)

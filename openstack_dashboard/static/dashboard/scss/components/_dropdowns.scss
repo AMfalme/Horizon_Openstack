@@ -64,8 +64,19 @@
 }
 
 .table_actions {
-  float: right;
+   
   @extend .form-inline;
+  .btn-launch{
+    margin: 65px auto 40px;
+    display: block;
+    width: 40%;
+    max-width: 300px;
+    padding: 8px;
+    background-color: purple;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+  }
 }
 
 .table_search,
@@ -75,8 +86,13 @@
 
 // Push the table filter padding over to compensate for that little magnifying glass icon
 .table_search {
+    min-width: 770px;
+    margin: 0 30px 30px 155px;
+    float: left;
+    width: 80%;
   input[type="text"] {
     padding-right: $input-height-base;
+    width: 85%;
   }
 }
 
