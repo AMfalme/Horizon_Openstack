@@ -82,7 +82,7 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'ddash.staging.duara.io.10.0.0.2.xip.
 # Set this to True if running on a multi-domain model. When this is enabled, it
 # will require the user to enter the Domain name in addition to the username
 # for login.
-OPENSTACK_KEYSTONE_MULTIDOMAIN_SUPPORT = True
+# OPENSTACK_KEYSTONE_MULTIDOMAIN_SUPPORT = False
 
 # Set this to True if you want available domains displayed as a dropdown menu
 # on the login screen. It is strongly advised NOT to enable this for public
@@ -104,7 +104,7 @@ OPENSTACK_KEYSTONE_MULTIDOMAIN_SUPPORT = True
 # Also, you will most likely have a value in the keystone policy file like this
 #    "cloud_admin": "rule:admin_required and domain_id:<your domain id>"
 # This value must be the name of the domain whose ID is specified there.
-#OPENSTACK_KEYSTONE_DEFAULT_DOMAIN = 'Default'
+OPENSTACK_KEYSTONE_DEFAULT_DOMAIN = 'admin_domain'
 
 # Set this to True to enable panels that provide the ability for users to
 # manage Identity Providers (IdPs) and establish a set of rules to map

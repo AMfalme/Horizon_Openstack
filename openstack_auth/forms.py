@@ -81,25 +81,13 @@ class Login(django_auth_forms.AuthenticationForm):
 
     @sensitive_variables()
     def clean(self):
-        default_domain = getattr(settings,
-                                 'OPENSTACK_KEYSTONE_DEFAULT_DOMAIN',
-                                 'Default')
+        domain = getattr(settings,
+                         'OPENSTACK_KEYSTONE_DEFAULT_DOMAIN',
+                         'Default')
         email = self.cleaned_data.get('email')
         password = self.cleaned_data.get('password')
         region = self.cleaned_data.get('region')
 
-        payload = {'emailAddress': email}
-        headers = {'Content-type': 'application/json'}
-        response = requests.get(settings.DIAM_USER_URL, params=payload, headers=headers)
-
-        if response.status_code == 404:
-            self.add_error(None, "User does not exist. Please sign up.")
-            return self.cleaned_data
-        elif response.status_code != 200:
-            self.add_error(None, "There was a problem logging in. Please try again")
-            return self.cleaned_data
-
-        domain = str(response.json().get('domainName'))
         try:
             self.user_cache = authenticate(request=self.request,
                                            username=email,
