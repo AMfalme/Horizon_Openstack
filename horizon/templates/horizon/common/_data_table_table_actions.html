@@ -44,7 +44,7 @@
     If additional actions are defined, scoop them into the actions dropdown menu
   {% endcomment %}
   {% if table_actions_menu|length > 0 %}
-    <div class="table_actions_menu">
+    <div class="table_actions_menu pull-right">
       <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#">
         {% if table_actions_buttons|length > 0 %}
           {{ table_actions_menu_label|default:_("More Actions") }}
