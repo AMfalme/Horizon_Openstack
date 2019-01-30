@@ -1247,8 +1247,7 @@ class InstancesTable(tables.DataTable):
                            verbose_name=_("Status"),
                            status=True,
                            status_choices=STATUS_CHOICES,
-                           display_choices=STATUS_DISPLAY_CHOICES,
-                            )
+                           display_choices=STATUS_DISPLAY_CHOICES)
     locked = tables.Column(render_locked,
                            verbose_name="",
                            sortable=False)
@@ -1258,8 +1257,6 @@ class InstancesTable(tables.DataTable):
                         hidden = True)
     task = tables.Column("OS-EXT-STS:task_state",
                          verbose_name=_("Task"),
-                         #  add hidden = True inorder to remove Task column
-                         hidden = True,
                          empty_value=TASK_DISPLAY_NONE,
                          status=True,
                          status_choices=TASK_STATUS_CHOICES,
