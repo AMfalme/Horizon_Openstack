@@ -62,11 +62,11 @@ pipeline {
                     remote.user = userName
                     remote.identityFile = identity
                     stage('Pull and Run image') {
-                        sshCommand remote: remote, command: "docker stop $NAME || true"
-                        sshCommand remote: remote, command: "docker rm $NAME || true"
                         sshCommand remote: remote, command: "docker pull $GCR_IMAGE_LATEST"
                         sshCommand remote: remote, command: "docker run --network $DOCKER_NET --name memcached -d memcached || true"
                         sshCommand remote: remote, command: "docker restart memcached"
+                        sshCommand remote: remote, command: "docker stop $NAME || true"
+                        sshCommand remote: remote, command: "docker rm $NAME || true"
                         sshCommand remote: remote, command: "docker run -d -p $EXPOSED_PORT:$EXPOSED_PORT -e STAGE=$STAGE --network $DOCKER_NET --dns=$DNS_SERVER --env-file $ENV_FILE --restart=always --name $NAME $GCR_IMAGE_LATEST"
                         sshCommand remote: remote, command: "docker system prune -f"
                     }
