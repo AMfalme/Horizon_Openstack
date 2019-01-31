@@ -47,3 +47,4 @@ tags
 ghostdriver.log
 .idea
 .vscode*
+.env

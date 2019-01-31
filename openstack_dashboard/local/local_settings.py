@@ -22,6 +22,7 @@ else:
 
 # Duara Identity Accesss Management
 DIAM_USER_URL = os.environ.get('DIAM_USER_URL')
+TOKEN_VERIFICATION_URL = os.environ.get('TOKEN_VERIFICATION_URL')
 
 # This setting controls whether or not compression is enabled. Disabling
 # compression makes Horizon considerably slower, but makes it much easier
