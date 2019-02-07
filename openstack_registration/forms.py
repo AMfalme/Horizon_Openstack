@@ -44,3 +44,37 @@ class UserCreationForm(forms.Form):
             self.add_error(None, "There was a problem creating your account. Please try again")
         
         return self.cleaned_data
+
+class UserResetPasswordForm(forms.Form):
+    email_address = forms.EmailField(label=('Email Address'), required=True,
+        widget=forms.EmailInput(attrs={"autofocus": "autofocus"}))
+
+    def clean(self):
+        email_address =  self.cleaned_data.get('email_address')
+        payload = {'emailAddress': email_address }
+        headers = {'Content-type': 'application/json'}
+
+        response = requests.post(settings.RESET_PASSWORD_URL, data=json.dumps(payload), headers=headers)
+
+        if response.status_code >= 500:
+            self.add_error(None, "There was a problem resetting your password. Please try again or contact support@duara.io.")
+        
+        return self.cleaned_data
+
+class UserPasswordUpdateForm(forms.Form):
+    password1 = forms.CharField(label=("Password"), required=True, min_length=8,
+        widget=forms.PasswordInput)
+    password2 = forms.CharField(label=("Password Confirmation"), required=True,
+        min_length=8,
+        widget=forms.PasswordInput)
+
+    def clean(self):
+        password1 = self.cleaned_data.get("password1")
+        password2 = self.cleaned_data.get("password2")
+        if password1 and password2 and password1 != password2:
+            raise forms.ValidationError(
+                self.error_messages['password_mismatch'],
+                code='password_mismatch',
+            )
+
+        return self.cleaned_data
