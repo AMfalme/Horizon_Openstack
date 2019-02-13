@@ -30,11 +30,12 @@ $navbar-true-height: $navbar-height + $navbar-border-size !default;
 }
 
 .page-header {
-  margin-top: $padding-base-horizontal;
-  float: left;
-  margin: 0 !important;
+
   border-bottom: none;
   margin-right: 10px;
+
+ 
+  margin: $padding-base-horizontal auto;
   h1{
   font-size: 35px;
   font-weight: 400;
@@ -42,4 +43,27 @@ $navbar-true-height: $navbar-height + $navbar-border-size !default;
  
   margin-top: 5px;
   }
+
 }
+.table_actions {
+   
+  @extend .form-inline;
+  .btn-launch, .btn-create, .actionClasses{
+    margin: 60px auto 40px;
+    display: block;
+    width: 40%;
+    max-width: 300px;
+    padding: 8px;
+    background-color: purple;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    &:hover, &:active, &:focus{
+      border: 1px solid purple;
+      color: #fff !important;
+      background-color: purple !important;
+      background-image: none;
+    }
+  }
+}
+

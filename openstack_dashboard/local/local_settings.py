@@ -26,7 +26,7 @@ DIAM_USER_URL = os.environ.get('DIAM_USER_URL')
 # This setting controls whether or not compression is enabled. Disabling
 # compression makes Horizon considerably slower, but makes it much easier
 # to debug JS and CSS changes
-#COMPRESS_ENABLED = False 
+COMPRESS_ENABLED = False 
 
 
 # WEBROOT is the location relative to Webserver root
