@@ -2,7 +2,6 @@
 {% minifyspace %}
   {% if action.method != "GET" %}
     <button {{ action.attr_string_nc|safe }}
-      style="margin-right: 70px;"
       class="pull-right data-table-action
         {% if is_small %}btn-sm{% endif %}
         {% for class in action.get_default_classes %}
@@ -32,11 +31,16 @@
       {% endif %}
     </button>
   {% else %}
+  <!-- add action-btn to try get global class for all call to action buttons -->
     <a {{ action.attr_string_nc|safe }}
+
       class="btn data-table-action
              {% if is_single %}btn-default{% endif %}
              {% if is_small %}btn-sm{% endif %}
-             {% if action.action_type == "danger" %}btn-danger{% endif %}
+             {% if action.action_type == 'danger' %}btn-danger
+             {% else %}
+             action-btn
+             {% endif %}
              {{ action.get_final_css|safe }}"
       {% if is_table_action %}
         href="{{ action.get_link_url }}"

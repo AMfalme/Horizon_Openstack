@@ -1,5 +1,5 @@
 .table {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   & > thead,
   & > tbody,
@@ -114,6 +114,9 @@
   td {
     background-clip: padding-box;
     width: 0;
+    .btn-group{
+      float: right;
+    }
   }
   tr.odd {
     td {

@@ -65,44 +65,28 @@
 }
 
 
-.table_actions {
-   
-  @extend .form-inline;
-  .btn-launch{
-    margin: 60px auto 40px;
-    display: block;
-    width: 40%;
-    max-width: 300px;
-    padding: 8px;
-    background-color: purple;
-    color: #fff;
-    font-size: 14px;
-    font-weight: 500;
-    &:hover, &:active, &:focus{
-      border: 1px solid purple;
-      color: #fff !important;
-      background-color: purple !important;
-      background-image: none;
-    }
-  }
-}
-
-
 .table_search,
 .table_filter {
   display: inline-block;
+}
+#instances__action_filter{
+  width: 14%;
 }
 
 // Push the table filter padding over to compensate for that little magnifying glass icon
 .table_search {
     min-width: 770px;
-    margin: 0 30px 30px 155px;
+    
     float: left;
-    width: 80%;
+    width: 100%;
   input[type="text"] {
     
-    width: 90%;
+    width: 85%;
   }
+  .has-feedback{
+    width: 100%;
+  }
+  
 }
 
 td.actions_column {
