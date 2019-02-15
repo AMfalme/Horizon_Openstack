@@ -37,10 +37,7 @@
       class="btn data-table-action
              {% if is_single %}btn-default{% endif %}
              {% if is_small %}btn-sm{% endif %}
-             {% if action.action_type == 'danger' %}btn-danger
-             {% else %}
-             action-btn
-             {% endif %}
+             {% if action.action_type == 'danger' %}btn-danger{% endif %}
              {{ action.get_final_css|safe }}"
       {% if is_table_action %}
         href="{{ action.get_link_url }}"

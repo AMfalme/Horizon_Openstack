@@ -518,7 +518,7 @@ class VolumesTable(VolumesTableBase):
         verbose_name = _("Volumes")
         status_columns = ["status"]
         row_class = UpdateRow
-        table_actions = (CreateVolume, AcceptTransfer, DeleteVolume,
+        table_actions = (CreateVolume, DeleteVolume,
                          VolumesFilterAction)
 
         launch_actions = ()

@@ -67,7 +67,7 @@
 .table_actions {
    
   @extend .form-inline;
-  .btn-launch{
+  .btn-launch, .btn-create{
     margin: 60px auto 40px;
     display: block;
     width: 40%;
