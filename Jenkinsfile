@@ -28,6 +28,12 @@ pipeline {
 
   stages {
     stage('Build Image') {
+      when {
+        anyOf {
+          branch 'staging';
+          branch 'release'
+        }
+      }
       steps {
         script {
           docker.build(GCR_IMAGE, ".")
