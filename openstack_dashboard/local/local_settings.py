@@ -14,23 +14,19 @@ if STAGE is None or (STAGE != 'staging' and  STAGE != 'prod'):
     from dotenv import load_dotenv
     load_dotenv()
 
-    COMPRESS_OFFLINE = False
-    DEBUG = True
-else:
-    DEBUG = False
-    COMPRESS_OFFLINE = True
-
 # Duara Identity Accesss Management
-DIAM_URL = os.environ.get('DIAM_URL') 
+DIAM_URL = os.environ.get('DIAM_URL')
 DIAM_USER_URL = DIAM_URL + "/user"
 EMAIL_VERIFICATION_URL = DIAM_USER_URL + "/confirm"
 RESET_PASSWORD_URL = DIAM_USER_URL + "/resetPassword"
-PASSWORD_UPDATE_URL = DIAM_USER_URL + "/updatePassword" 
+PASSWORD_UPDATE_URL = DIAM_USER_URL + "/updatePassword"
 
 # This setting controls whether or not compression is enabled. Disabling
 # compression makes Horizon considerably slower, but makes it much easier
 # to debug JS and CSS changes
-COMPRESS_ENABLED = False 
+DEBUG = False
+COMPRESS_ENABLED = True
+COMPRESS_OFFLINE = True
 
 
 # WEBROOT is the location relative to Webserver root
@@ -49,7 +45,11 @@ WEBROOT = '/'
 # with the list of host/domain names that the application can serve.
 # For more information see:
 # https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'ddash.staging.duara.io.10.0.0.2.xip.io', 'abcxyz-beta-console.duara.io']
+ALLOWED_HOSTS = [
+    'abcxyz-alpha-console.duara.io',
+    'abcxyz-beta-console.duara.io',
+    'console.duara.io.10.0.0.2.xip.io'
+]
 
 # Set SSL proxy settings:
 # Pass this header from the proxy after terminating the SSL,
