@@ -24,7 +24,7 @@ $navbar-true-height: $navbar-height + $navbar-border-size !default;
 @media(min-width: $screen-sm-min) {
   #content_body {
     padding-left: $sidebar-width;
-    width: 88%;
+    width: 98%;
     margin: 0 auto;
   }
 }

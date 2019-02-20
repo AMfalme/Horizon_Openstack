@@ -67,6 +67,7 @@
     min-width: 802px;
     z-index: 1;
     position: relative;
+    box-shadow: 0 8px 8px -8px #c6bac9;
     .navbar-brand {
       svg {
         fill: $navbar-inverse-link-active-color;

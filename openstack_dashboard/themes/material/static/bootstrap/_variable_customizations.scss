@@ -36,7 +36,7 @@ $icon-font-svg-id:        "material";
 
 // Inverted navbar
 // Inverted navbar links
-$navbar-inverse-link-color:                 #fff;
+$navbar-inverse-link-color:                $brand-primary;
 $navbar-inverse-link-hover-color:           $navbar-inverse-link-color;
 
 // Inverted navbar brand label
