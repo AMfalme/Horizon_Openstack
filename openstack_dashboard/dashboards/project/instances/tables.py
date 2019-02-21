@@ -1291,9 +1291,7 @@ class InstancesTable(tables.DataTable):
                        CreateSnapshot, AssociateIP,
                        SimpleDisassociateIP, AttachInterface,
                        DetachInterface, EditInstance, AttachVolume,
-                       DetachVolume, UpdateMetadata, DecryptInstancePassword,
-                       EditInstanceSecurityGroups, ConsoleLink, LogLink,
-                       TogglePause, ToggleSuspend, ToggleShelve,
-                       ResizeLink, LockInstance, UnlockInstance,
+                       DetachVolume, DecryptInstancePassword,
+                       EditInstanceSecurityGroups, ResizeLink,
                        SoftRebootInstance, RebootInstance,
-                       StopInstance, RebuildInstance, DeleteInstance)
+                       StopInstance, DeleteInstance)
