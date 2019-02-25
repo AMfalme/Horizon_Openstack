@@ -46,9 +46,12 @@ $navbar-true-height: $navbar-height + $navbar-border-size !default;
 
 }
 .table_actions {
-   
-  @extend .form-inline;
+  float: right;
+  input[type="text"] {
+    padding-right: $input-height-base;
+
   }
+}
   
 
 
