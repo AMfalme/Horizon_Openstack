@@ -1183,7 +1183,7 @@ INSTANCE_FILTER_CHOICES = (
 
 
 class InstancesFilterAction(tables.FilterAction):
-    filter_type = "server"
+    filter_type = "query"
     filter_choices = INSTANCE_FILTER_CHOICES
 
 
