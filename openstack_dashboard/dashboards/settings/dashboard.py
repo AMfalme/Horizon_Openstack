@@ -22,7 +22,7 @@ class Settings(horizon.Dashboard):
     name = _("Settings")
     slug = "settings"
     panels = ('user', 'password', )
-    default_panel = 'user'
+    default_panel = 'password'
 
     # def nav(self, context):
     #     dash = context['request'].horizon.get('dashboard', None)

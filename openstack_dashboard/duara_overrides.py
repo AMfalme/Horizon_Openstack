@@ -18,7 +18,10 @@ settings.name = _("Account")
 project = horizon.get_dashboard('project')
 project.name = _('Dashboard')
 
-
+# remove user settings
+x1 = settings.get_panel("user")
+settings.unregister(x1.__class__)
+# settings.default_panel = ""
 def remove_panels_from_dashboard(list):
 	project.default_panel = "instances"
 	for panel in list:
