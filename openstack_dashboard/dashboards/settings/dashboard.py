@@ -21,7 +21,7 @@ import horizon
 class Settings(horizon.Dashboard):
     name = _("Settings")
     slug = "settings"
-    panels = ('user', 'password', )
+    panels = ('password', )
     default_panel = 'password'
 
     # def nav(self, context):

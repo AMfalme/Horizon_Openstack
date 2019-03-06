@@ -77,9 +77,12 @@
 
 // Push the table filter padding over to compensate for that little magnifying glass icon
 .table_search {
-    
+    width: 52%;
   .has-feedback{
     width: 100%;
+    &>input{
+      width: 100%;
+    }
   }
   
 }

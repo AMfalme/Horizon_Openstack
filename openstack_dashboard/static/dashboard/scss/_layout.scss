@@ -46,10 +46,10 @@ $navbar-true-height: $navbar-height + $navbar-border-size !default;
 
 }
 .table_actions {
-  float: right;
+  width: 100%;
   input[type="text"] {
     padding-right: $input-height-base;
-
+    width: 100%;
   }
 }
   
