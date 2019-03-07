@@ -22,7 +22,7 @@ pipeline {
     PROD_MACHINE = "ddash.staging"
     PROD_ENV = "~/.env/ddash.staging.env"
     STAGING_MACHINE = "diam.staging"
-    STAGING_ENV = "~/.env/diam.staging.env"
+    STAGING_ENV = "~/.env/ddash.staging.env"
     DNS_SERVER = "10.0.0.2"
   }
 
