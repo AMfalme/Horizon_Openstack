@@ -530,8 +530,8 @@ class VolumesTable(VolumesTableBase):
         row_actions = ((EditVolume, ExtendVolume,) +
                        launch_actions +
                        (EditAttachments, CreateSnapshot, CreateBackup,
-                        RetypeVolume, UploadToImage, CreateTransfer,
-                        DeleteTransfer, DeleteVolume, UpdateMetadata))
+                        
+                        DeleteTransfer, DeleteVolume))
 
 
 class DetachVolume(tables.BatchAction):

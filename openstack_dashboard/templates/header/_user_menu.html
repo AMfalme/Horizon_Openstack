@@ -33,24 +33,7 @@
         </li>
       {% endif %}
 
-      {% for link in USER_MENU_LINKS %}
-        <li>
-          {% if link.external %}
-            <a href="{{ link.url }}">
-          {% else %}
-            <a href="{% url link.url %}">
-          {% endif %}
-
-          {% if link.icon_classes %}
-              <span class="fa {{ link.icon_classes | join:" "}}"></span>
-          {% else %}
-              <span class="fa fa-download"></span>
-          {% endif %}
-          {{ link.name }}
-          </a>
-
-        </li>
-      {% endfor %}
+   
 
       {% themes as available_themes %}
       {% if available_themes and available_themes|length > 1 %}
