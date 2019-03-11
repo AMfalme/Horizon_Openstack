@@ -79,12 +79,12 @@ class CreateForm(forms.SelfHandlingForm):
     description = forms.CharField(max_length=255, widget=forms.Textarea(
         attrs={'rows': 4}),
         label=_("Description"), required=False)
-    volume_source_type = forms.ChoiceField(
-        label=_("Volume Source"),
-        required=False,
-        widget=forms.ThemableSelectWidget(attrs={
-            'class': 'switchable',
-            'data-slug': 'source'}))
+    # volume_source_type = forms.ChoiceField(
+    #     label=_("Volume Source"),
+    #     required=False,
+    #     widget=forms.ThemableSelectWidget(attrs={
+    #         'class': 'hidden',
+    #         'data-slug': 'source'}))
     snapshot_source = forms.ChoiceField(
         label=_("Use snapshot as a source"),
         widget=forms.ThemableSelectWidget(
@@ -92,37 +92,37 @@ class CreateForm(forms.SelfHandlingForm):
             data_attrs=('size', 'name'),
             transform=lambda x: "%s (%s GiB)" % (x.name, x.size)),
         required=False)
-    image_source = forms.ChoiceField(
-        label=_("Use image as a source"),
-        widget=forms.ThemableSelectWidget(
-            attrs={'class': 'image-selector'},
-            data_attrs=('size', 'name', 'min_disk'),
-            transform=lambda x: "%s (%s)" % (x.name, filesizeformat(x.bytes))),
-        required=False)
-    volume_source = forms.ChoiceField(
-        label=_("Use a volume as source"),
-        widget=forms.ThemableSelectWidget(
-            attrs={'class': 'image-selector'},
-            data_attrs=('size', 'name'),
-            transform=lambda x: "%s (%s GiB)" % (x.name, x.size)),
-        required=False)
-    type = forms.ChoiceField(
-        label=_("Type"),
-        required=False,
-        widget=forms.ThemableSelectWidget(
-            attrs={'class': 'switched',
-                   'data-switch-on': 'source',
-                   'data-source-no_source_type': _('Type'),
-                   'data-source-image_source': _('Type')}))
+    # image_source = forms.ChoiceField(
+    #     label=_("Use image as a source"),
+    #     widget=forms.ThemableSelectWidget(
+    #         attrs={'class': 'image-selector'},
+    #         data_attrs=('size', 'name', 'min_disk'),
+    #         transform=lambda x: "%s (%s)" % (x.name, filesizeformat(x.bytes))),
+    #     required=False)
+    # volume_source = forms.ChoiceField(
+    #     label=_("Use a volume as source"),
+    #     widget=forms.ThemableSelectWidget(
+    #         attrs={'class': 'image-selector'},
+    #         data_attrs=('size', 'name'),
+    #         transform=lambda x: "%s (%s GiB)" % (x.name, x.size)),
+    #     required=False)
+    # type = forms.ChoiceField(
+    #     label=_("Type"),
+    #     required=False,
+    #     widget=forms.ThemableSelectWidget(
+    #         attrs={'class': 'switched',
+    #                'data-switch-on': 'source',
+    #                'data-source-no_source_type': _('Type'),
+    #                'data-source-image_source': _('Type')}))
     size = forms.IntegerField(min_value=1, initial=1, label=_("Size (GiB)"))
-    availability_zone = forms.ChoiceField(
-        label=_("Availability Zone"),
-        required=False,
-        widget=forms.ThemableSelectWidget(
-            attrs={'class': 'switched',
-                   'data-switch-on': 'source',
-                   'data-source-no_source_type': _('Availability Zone'),
-                   'data-source-image_source': _('Availability Zone')}))
+    # availability_zone = forms.ChoiceField(
+    #     label=_("Availability Zone"),
+    #     required=False,
+    #     widget=forms.ThemableSelectWidget(
+    #         attrs={'class': 'switched',
+    #                'data-switch-on': 'source',
+    #                'data-source-no_source_type': _('Availability Zone'),
+    #                'data-source-image_source': _('Availability Zone')}))
 
     def prepare_source_fields_if_snapshot_specified(self, request):
         try:
@@ -211,8 +211,8 @@ class CreateForm(forms.SelfHandlingForm):
 
     def prepare_source_fields_default(self, request):
         source_type_choices = []
-        self.fields['availability_zone'].choices = \
-            availability_zones(request)
+        # self.fields['availability_zone'].choices = \
+        #     availability_zones(request)
 
         try:
             available = api.cinder.VOLUME_STATE_AVAILABLE
@@ -239,7 +239,7 @@ class CreateForm(forms.SelfHandlingForm):
                 image.bytes = image.size
                 image.size = functions.bytes_to_gigabytes(image.bytes)
                 choices.append((image.id, image))
-            self.fields['image_source'].choices = choices
+            # self.fields['image_source'].choices = choices
         else:
             del self.fields['image_source']
 
@@ -249,15 +249,14 @@ class CreateForm(forms.SelfHandlingForm):
             choices = [('', _("Choose a volume"))]
             for volume in volumes:
                 choices.append((volume.id, volume))
-            self.fields['volume_source'].choices = choices
+            # self.fields['volume_source'].choices = choices
         else:
             del self.fields['volume_source']
 
         if source_type_choices:
             choices = ([('no_source_type',
-                         _("No source, empty volume"))] +
-                       source_type_choices)
-            self.fields['volume_source_type'].choices = choices
+                         _("No source, empty volume"))] )
+            # self.fields['volume_source_type'].choices = choices
         else:
             del self.fields['volume_source_type']
 
@@ -270,13 +269,13 @@ class CreateForm(forms.SelfHandlingForm):
             redirect_url = reverse("horizon:project:volumes:index")
             error_message = _('Unable to retrieve the volume type list.')
             exceptions.handle(request, error_message, redirect=redirect_url)
-        self.fields['type'].choices = [("", _("No volume type"))] + \
-                                      [(type.name, type.name)
-                                       for type in volume_types]
-        if 'initial' in kwargs and 'type' in kwargs['initial']:
-            # if there is a default volume type to select, then remove
-            # the first ""No volume type" entry
-            self.fields['type'].choices.pop(0)
+        # self.fields['type'].choices = [("", _("No volume type"))] + \
+        #                               [(type.name, type.name)
+        #                                for type in volume_types]
+        # if 'initial' in kwargs and 'type' in kwargs['initial']:
+        #     # if there is a default volume type to select, then remove
+        #     # the first ""No volume type" entry
+        #     self.fields['type'].choices.pop(0)
 
         if "snapshot_id" in request.GET:
             self.prepare_source_fields_if_snapshot_specified(request)
