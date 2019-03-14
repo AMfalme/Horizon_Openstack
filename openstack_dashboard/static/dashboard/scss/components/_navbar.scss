@@ -25,6 +25,9 @@
   .navbar-nav{
     margin-left: 65px;
     margin-right: 0;
+    .dropdown-menu{
+      margin-right: 10px;
+    }
   }
   .navbar-nav .header-overflow ul li{
     white-space: nowrap;

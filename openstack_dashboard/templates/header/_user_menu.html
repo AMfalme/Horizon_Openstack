@@ -24,14 +24,7 @@
           </a>
         </li>
       {% endif %}
-      {% if HORIZON_CONFIG.help_url %}
-        <li>
-          <a href="{{ HORIZON_CONFIG.help_url }}" target="_blank">
-            <span class="fa fa-question-circle"></span>
-            {% trans "Help" %}
-          </a>
-        </li>
-      {% endif %}
+     
 
    
 
@@ -42,7 +35,7 @@
           {% include 'header/_theme_list.html' %}
         </li>
       {% endif %}
-      <li class="divider"></li>
+  
       <li>
         <a href="{% url 'logout' %}" target="_self">
           <span class="fa fa-sign-out"></span>
