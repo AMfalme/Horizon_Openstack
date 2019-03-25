@@ -116,9 +116,36 @@
      * Return all toasts.
      */
     function get() {
+    console.log(toasts.length);
+       for (var i = 0; i <= 20; i++) {
+        if (toasts[i].type == "danger" ) {
+          clearErrors();
+          
+          service.add('danger', 'An Error occured, Kindly try again!');
+          break;
+         
+        }
+      }
+    
       return toasts;
+        
+      
     }
-
+    // function clean_get() {
+    //   var clean_errors = False;
+    //    for (var i = 0; i >= 20; i++) {
+    //     if (toasts[i].type == "danger" ) {
+    //       clearErrors();
+    //       clean_errors = True
+    //       console.log('this seems to work');
+    //     }
+    //    return toasts   
+    //   }
+    //   if (clean_errors) {
+    //     service.add('danger', 'An Error occured, Kindly try again!');
+    //   }
+    //   return toasts;
+    // }
     /**
      * find a matching existing toast based on type and message
      *
