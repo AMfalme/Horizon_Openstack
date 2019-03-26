@@ -109,23 +109,35 @@
         cancel: cancel
       };
       autoDismiss(toast);
-      toasts.push(toast);
+      if (toast.type != 'danger') {
+        toasts.push(toast);
+      } else if(toast.type == 'danger' && !service.find('danger', 'An Error occured, Kindly try again!')) {
+        toast = {
+          type: 'danger',
+          typeMsg: this.types[type],
+          msg: 'An Error occured, Kindly try again!',
+          cancel: cancel
+        };
+        toasts.push(toast);
+        return toasts;
+      }
+     
     }
 
     /**
      * Return all toasts.
      */
     function get() {
-    console.log(toasts.length);
-       for (var i = 0; i <= 20; i++) {
-        if (toasts[i].type == "danger" ) {
-          clearErrors();
+    // console.log(toasts.length);
+    //    for (var i = 0; i <= 20; i++) {
+    //     if (toasts[i].type == "danger" ) {
+    //       clearErrors();
           
-          service.add('danger', 'An Error occured, Kindly try again!');
-          break;
+    //       service.add('danger', 'An Error occured, Kindly try again!');
+    //       break;
          
-        }
-      }
+    //     }
+    //   }
     
       return toasts;
         
