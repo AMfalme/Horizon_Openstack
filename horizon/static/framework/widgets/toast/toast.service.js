@@ -109,19 +109,21 @@
         cancel: cancel
       };
       autoDismiss(toast);
-      if (toast.type != 'danger') {
-        toasts.push(toast);
-      }
-      if(!service.find('danger', 'An Error occured, Kindly try again!')) {
+      if (toast.msg.startsWith("Unable to retrieve")){
+        if(!service.find('danger', 'Some services might be down. Check Duara status page or try again!')){
         toast = {
           type: 'danger',
           typeMsg: this.types[type],
-          msg: 'An Error occured, Kindly try again!',
+          msg: 'Some services might be down. Check Duara status page or try again!',
           cancel: cancel
         };
-        toasts.push(toast);
         
-      }
+        toasts.push(toast)
+        }
+      } else {
+        toasts.push(toast)
+      } 
+     
      
     }
 
