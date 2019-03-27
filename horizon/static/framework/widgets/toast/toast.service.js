@@ -109,7 +109,7 @@
         cancel: cancel
       };
       autoDismiss(toast);
-      if (toast.msg.startsWith("Unable to retrieve")){
+      if (toast.msg.startsWith("Unable to retrieve") || toast.msg.startsWith("Unable to fetch") || toast.msg.startsWith("Unable to check")){
         if(!service.find('danger', 'Some services might be down. Check Duara status page or try again!')){
         toast = {
           type: 'danger',
