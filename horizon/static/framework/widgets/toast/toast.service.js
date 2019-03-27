@@ -111,7 +111,8 @@
       autoDismiss(toast);
       if (toast.type != 'danger') {
         toasts.push(toast);
-      } else if(!service.find('danger', 'An Error occured, Kindly try again!')) {
+      }
+      if(!service.find('danger', 'An Error occured, Kindly try again!')) {
         toast = {
           type: 'danger',
           typeMsg: this.types[type],
