@@ -201,7 +201,7 @@
         // REQUIRED for JS logic (image | snapshot | volume | volume_snapshot)
         source_type: null,
         source: [],
-        create_volume_default: true,
+        create_volume_default: false,
         // REQUIRED for JS logic
         vol_create: false,
         // May be null
@@ -672,21 +672,21 @@
       );
     }
 
-    function onGetVolumes(data) {
-      model.volumes.length = 0;
-      push.apply(model.volumes, data.data.items);
-      addAllowedBootSource(model.volumes, bootSourceTypes.VOLUME, gettext('Volume'));
-    }
+    // function onGetVolumes(data) {
+    //   model.volumes.length = 0;
+    //   push.apply(model.volumes, data.data.items);
+    //   addAllowedBootSource(model.volumes, bootSourceTypes.VOLUME, gettext('Volume'));
+    // }
 
-    function onGetVolumeSnapshots(data) {
-      model.volumeSnapshots.length = 0;
-      push.apply(model.volumeSnapshots, data.data.items);
-      addAllowedBootSource(
-        model.volumeSnapshots,
-        bootSourceTypes.VOLUME_SNAPSHOT,
-        gettext('Volume Snapshot')
-      );
-    }
+    // function onGetVolumeSnapshots(data) {
+    //   model.volumeSnapshots.length = 0;
+    //   push.apply(model.volumeSnapshots, data.data.items);
+    //   addAllowedBootSource(
+    //     model.volumeSnapshots,
+    //     bootSourceTypes.VOLUME_SNAPSHOT,
+    //     gettext('Volume Snapshot')
+    //   );
+    // }
 
     function addAllowedBootSource(rawTypes, type, label) {
       if (rawTypes) {

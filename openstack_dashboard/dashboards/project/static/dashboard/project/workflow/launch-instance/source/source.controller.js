@@ -63,10 +63,10 @@
     /*eslint-enable max-len */
 
     // toggle button label/value defaults
-    ctrl.toggleButtonOptions = [
-      { label: gettext('Yes'), value: true },
-      { label: gettext('No'), value: false }
-    ];
+    // ctrl.toggleButtonOptions = [
+    //   { label: gettext('Yes'), value: true },
+    //   { label: gettext('No'), value: false }
+    // ];
 
     /*
      * Boot Sources

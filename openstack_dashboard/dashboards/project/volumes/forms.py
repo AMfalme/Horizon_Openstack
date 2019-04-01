@@ -79,12 +79,6 @@ class CreateForm(forms.SelfHandlingForm):
     description = forms.CharField(max_length=255, widget=forms.Textarea(
         attrs={'rows': 4}),
         label=_("Description"), required=False)
-    # volume_source_type = forms.ChoiceField(
-    #     label=_("Volume Source"),
-    #     required=False,
-    #     widget=forms.ThemableSelectWidget(attrs={
-    #         'class': 'hidden',
-    #         'data-slug': 'source'}))
     snapshot_source = forms.ChoiceField(
         label=_("Use snapshot as a source"),
         widget=forms.ThemableSelectWidget(
@@ -92,37 +86,8 @@ class CreateForm(forms.SelfHandlingForm):
             data_attrs=('size', 'name'),
             transform=lambda x: "%s (%s GiB)" % (x.name, x.size)),
         required=False)
-    # image_source = forms.ChoiceField(
-    #     label=_("Use image as a source"),
-    #     widget=forms.ThemableSelectWidget(
-    #         attrs={'class': 'image-selector'},
-    #         data_attrs=('size', 'name', 'min_disk'),
-    #         transform=lambda x: "%s (%s)" % (x.name, filesizeformat(x.bytes))),
-    #     required=False)
-    # volume_source = forms.ChoiceField(
-    #     label=_("Use a volume as source"),
-    #     widget=forms.ThemableSelectWidget(
-    #         attrs={'class': 'image-selector'},
-    #         data_attrs=('size', 'name'),
-    #         transform=lambda x: "%s (%s GiB)" % (x.name, x.size)),
-    #     required=False)
-    # type = forms.ChoiceField(
-    #     label=_("Type"),
-    #     required=False,
-    #     widget=forms.ThemableSelectWidget(
-    #         attrs={'class': 'switched',
-    #                'data-switch-on': 'source',
-    #                'data-source-no_source_type': _('Type'),
-    #                'data-source-image_source': _('Type')}))
     size = forms.IntegerField(min_value=1, initial=1, label=_("Size (GiB)"))
-    # availability_zone = forms.ChoiceField(
-    #     label=_("Availability Zone"),
-    #     required=False,
-    #     widget=forms.ThemableSelectWidget(
-    #         attrs={'class': 'switched',
-    #                'data-switch-on': 'source',
-    #                'data-source-no_source_type': _('Availability Zone'),
-    #                'data-source-image_source': _('Availability Zone')}))
+  
 
     def prepare_source_fields_if_snapshot_specified(self, request):
         try:

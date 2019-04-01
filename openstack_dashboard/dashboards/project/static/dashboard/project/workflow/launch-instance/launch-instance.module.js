@@ -33,8 +33,6 @@
     .constant('horizon.dashboard.project.workflow.launch-instance.boot-source-types', {
       IMAGE: 'image',
       INSTANCE_SNAPSHOT: 'snapshot',
-      VOLUME: 'volume',
-      VOLUME_SNAPSHOT: 'volume_snapshot',
       NON_BOOTABLE_IMAGE_TYPES: ['aki', 'ari']
     })
     .constant('horizon.dashboard.project.workflow.launch-instance.non_bootable_image_types',
